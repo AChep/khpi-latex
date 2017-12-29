@@ -1,3 +1,7 @@
+# Artem Chepurnoy:
+# My labs diploma etc.
+/projects/*
+
 ## Core latex/pdflatex auxiliary files:
 *.aux
 *.lof
