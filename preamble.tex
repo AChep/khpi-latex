@@ -45,11 +45,11 @@
 \titleformat{\section}
   {\centering}{\thesection \quad}{0pt}{\MakeUppercase{#1}}
 \titleformat{\subsection}[block]
-  {\bfseries}{\hspace{1.25cm}\thesubsection \quad #1}{0cm}{}
+  {\bfseries}{\thesubsection \quad #1}{0cm}{}
 
 \titlespacing{\section} {0cm}{0cm}{1cm}
-\titlespacing{\subsection} {0cm}{0.5cm}{0cm}
-\titlespacing{\subsubsection} {1.25cm}{0cm}{0cm}
+\titlespacing{\subsection} {\parindent}{0.5cm}{0cm}
+\titlespacing{\subsubsection} {\parindent}{0cm}{0cm}
 
 % Lists
 \usepackage{enumitem}
