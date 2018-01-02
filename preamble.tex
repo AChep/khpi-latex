@@ -65,17 +65,3 @@
 \renewcommand{\cftsecfont}{}
 \renewcommand{\cftsecpagefont}{}
 \renewcommand{\cftsecleader}{\cftdotfill{\cftdotsep}}
-
-% Bib
-\usepackage[nottoc,numbib]{tocbibind}
-
-\makeatletter
-\renewcommand\@biblabel[1]{#1}
-\makeatother
-
-\let\OLDthebibliography\thebibliography
-\renewcommand\thebibliography[1]{
-  \OLDthebibliography{#1}
-  \setlength{\parskip}{0pt}
-  \setlength{\itemsep}{0pt}
-}
