@@ -54,9 +54,10 @@
 % Lists
 \usepackage{enumitem}
 \renewcommand\labelitemi{--}
+\renewcommand\labelenumi{\arabic*}
 \setlist[itemize]{noitemsep, topsep=0pt, wide}
-\setlist[enumerate]{noitemsep, topsep=0pt, wide, label=\arabic*}
-\setlist[description]{labelsep=0pt, noitemsep, topsep=0pt, leftmargin=2\parindent, labelindent=\parindent, labelwidth=\parindent, font=\normalfont}
+\setlist[enumerate]{noitemsep, topsep=0pt, wide}
+\setlist[description]{noitemsep, topsep=0pt, labelsep=0pt, leftmargin=2\parindent, labelindent=\parindent, labelwidth=\parindent, font=\normalfont}
 
 % Toc
 \usepackage{tocloft}
