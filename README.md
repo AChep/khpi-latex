@@ -9,3 +9,5 @@ LaTeX template for National Technical University "Kharkiv Polytechnic Institute"
 
 ## Compiling
 You gotta use `LuaLaTeX` to compile.
+Note:
+- This template uses `biblatex` package for managing bibliography. Check out its [documentation](https://ctan.org/pkg/biblatex) (at least the _requirements_ section).
