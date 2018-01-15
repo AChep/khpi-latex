@@ -1,5 +1,5 @@
 # khpi-latex
-LaTeX template for National Technical University "Kharkiv Polytechnic Institute"
+LaTeX template for National Technical University "Kharkiv Polytechnic Institute". The template is based on standard `СТВУЗ-ХПІ-3.01-2010`.
 
 ## Recommended setup for Windows
 - [MiKTeX](http://miktex.org/);
