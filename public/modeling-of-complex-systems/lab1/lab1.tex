@@ -1,0 +1,115 @@
+\input{../../../preamble}
+\input{../../../commons}
+
+\newcommand{\labnumber}{1} % first lab
+\input{../preamble}
+\input{../constants}
+
+\usepackage{../packages/tikz-uml}
+
+\graphicspath{{figures/}}
+
+\begin{document}
+\Ukrainian
+
+\input{../../../title}
+\addtocounter{page}{1}
+
+\section*{Знайомство з середовищем Visual Paradigm for UML}
+\subsubsection*{Мета роботи}
+Отримати практичні навички роботи в середовищі візуального моделювання Visual Paradigm for UML.
+\subsubsection*{Хід роботи}
+\begin{enumerate}
+\item Ознайомитися із методичними рекомендаціями щодо роботи в середовищі Visual Paradigm for UML.
+\item Дослідити можливості Visual Paradigm for UML щодо створення різних типів діаграм.
+\item Створити за допомогою Visual Paradigm for UML діаграми компонентів, активності, класів та прецедентів. 
+Зберегти проект.
+\item Оформити звіт про виконання лабораторної роботи.
+\end{enumerate}
+
+\subsection{Діаграма прецедентів}
+Приклад діаграми прецедентів представлено на рисунку~\ref{fig:uml_usecase}.
+
+\begin{figure}[H]
+    \centering
+    \tikzumlset{font=\footnotesize} 
+    \tikzumlset{fill usecase=white}
+    \begin{tikzpicture} 
+        \umlactor[x=4, y=2]{Актор} 
+        \umlusecase[x=1, y=0, width=3.5cm, name=import]{Імпорт конфігурації з JADE файлу} 
+        \umlusecase[x=0, y=3, width=3.5cm, name=export]{Експорт конфігурації до JADE файлу}
+
+        \umlusecase[x=1, y=6, width=3cm, name=correction]{Коригування моделі рішень актору} 
+        \umlusecase[x=7, y=1, name=report]{Генерація звіту} 
+        \umlusecase[x=7, y=6, width=3cm, name=current]{Перегляд поточної конфігурації} 
+        
+        \umlusecase[x=11, y=5, name=report_c_period]{Вибір періоду} 
+        \umlusecase[x=9, y=3, name=report_c]{Конфігурація звіту} 
+        \umlusecase[x=11, y=1, name=report_c_actors]{Вибір акторів}  
+
+        \umlassoc{Актор}{import}
+        \umlassoc{Актор}{export}
+        \umlassoc{Актор}{correction}
+        \umlassoc{Актор}{report}
+        \umlassoc{Актор}{current}
+
+        \umlinclude{report}{report_c}
+        \umlextend{report_c_period}{report_c}
+        \umlextend{report_c_actors}{report_c}
+    \end{tikzpicture}
+
+    \caption{Діаграма прецедентів у UML-нотації}
+    \label{fig:uml_usecase}
+\end{figure}
+
+\subsection{Діаграма компонентів}
+Приклад діаграми прецедентів представлено на рисунку~\ref{fig:uml_component}.
+
+\begin{figure}[H]
+    \centering
+    \tikzumlset{font=\footnotesize} 
+    \tikzumlset{fill component=white}
+    \begin{tikzpicture} 
+        \begin{umlcomponent}[name=jade,x=-5]{JADE}
+            \begin{umlcomponent}{Agent}
+                \umlbasiccomponent{Prediction}
+            \end{umlcomponent}
+        \end{umlcomponent}
+        \umlbasiccomponent[name=jadec, x=4]{Controller}
+        \umlbasiccomponent[name=json, x=8]{JSON Parser}
+        
+        \begin{umlcomponent}[name=ui,y=4]{Control Panel UI}
+            \umlbasiccomponent[name=conrolconf]{Net Configuration}
+            \umlbasiccomponent[name=controlintrusion, x=4]{Agent Intrusion}
+            \umlbasiccomponent[name=reportcreate, x=8]{Agent Report}
+            \umldelegateconnector{reportcreate}{json}
+        \end{umlcomponent}
+
+        \umldelegateconnector{ui}{jadec}
+        \umlHVHassemblyconnector[interface=IMessage]{jadec}{jade}
+    \end{tikzpicture}
+    \caption{Діаграма компонентів у UML-нотації}
+    \label{fig:uml_component}
+\end{figure}
+
+\subsection{Діаграма активності}
+Приклад діаграми прецедентів представлено на рисунку~\ref{fig:uml_activity}.
+
+\begin{figure}[H]
+  \centering
+    \includegraphics[width=0.6\textwidth]{uml_activity}
+  \caption{Діаграма активності у UML-нотації}
+  \label{fig:uml_activity}
+\end{figure}
+
+\subsection{Діаграма класів}
+Приклад діаграми прецедентів представлено на рисунку~\ref{fig:uml_class}.
+
+\begin{figure}[H]
+  \centering
+    \includegraphics[width=0.8\textwidth]{uml_class}
+  \caption{Діаграма класів у UML-нотації}
+  \label{fig:uml_class}
+\end{figure}
+
+\end{document}
