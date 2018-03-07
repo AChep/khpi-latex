@@ -42,73 +42,68 @@
 \end{figure}
 
 Нехай $\lambda$ означає подовження пружини в даний момент, а $\lambda_{st}$ --- статичне подовження, тобто відстань від кінця нерозтягнутої пружини до положення рівноваги. 
-Тоді $\lambda=\lambda_{st}+x$ або $\lambda-\lambda_{st}=x$.
+Тоді 
+\[
+\lambda-\lambda_{st}=x
+\].
 
 Згідно до закону Гука сила натягу пружини пропорційно її подовженню:
-\[
-F_\textup{пр}=-c\lambda
-\]
+\begin{align*}
+F_\textup{пр}&=-kx, \\
+P = F_\textup{тяг}&=ma,
+\end{align*}
 \begin{description}
-\item[де] $c$ --- жорсткість пружини.
+\item[де] $k$ --- жорсткість пружини.
 \end{description}
 
+При цьому виконується наступне співвідношення:
 \begin{align*}
-F_p &= F_\textup{пр} + F_\textup{тяг}, \\
-F_\textup{тяг} &= P, \\
-a &= \cfrac{d^2x}{dt^2}, \\
-m\cfrac{d^2x}{dt^2} &= F_\textup{пр} + F_\textup{тяг}, \\
-m\cfrac{d^2x}{dt^2} &= - c\lambda - P.
+F_\textup{тяг} &= F_\textup{пр}, \\
+ma &= -kx.
 \end{align*}
 
-Так як в положені рівноваги сила рівноваги натягу пружини врівноважується вагою тіла, то $P=c\lambda_{st}$.
-Підставимо в диференціальне рівняння вираз $P=c\lambda_{st}$ та замінимо $\lambda - \lambda_{st}$ через $x$:
+Останній вираз приведемо до нормального вигляду однорідного диференціального рівняння другого порядку, що описує одновимірний (з одним ступенем свободи) рух пружинного маятника:
 \[
-m\cfrac{d^2x}{dt^2} + k^2x = 0,
+m\cfrac{d^2x}{dt^2} + \omega^2x = 0,
 \]
 \begin{description}
-\item[де] $k^2 = \cfrac{c}{m}$
+\item[де] $\omega^2 = \cfrac{k}{m}$.
 \end{description}
 
 Отримане рівняння визначає так звані вільні коливання вантажу.
 Воно називається рівнянням гармонічного осцилятора.
 Це лінійне диференціальне рівняння другого порядку з постійними коефіцієнтами.
-Його характеристичне рівняння $r^2 + k^2 = 0$ має уявні корені $r=\pm ik$.
-Загальне рішення:
+Його загальне рішення:
 \[
-x = C_1 \cos kt + C_2 \sin kt.
+x = C_1 \cos \omega t + C_2 \sin \omega t.
 \]
 
 Для з'ясування фізичного сенсу рішення зручніше привести його до іншої форми, помноживши та поділивши на $\sqrt{C_1^2 + C_2^2}$:
 \[
-x = \sqrt{C_1^2 + C_2^2} \cdot \left( \cfrac{C_1}{\sqrt{C_1^2 + C_2^2}} \cos kt + \cfrac{C_2}{\sqrt{C_1^2 + C_2^2}} \sin kt \right).
+x = \sqrt{C_1^2 + C_2^2} \cdot \left( \cfrac{C_1}{\sqrt{C_1^2 + C_2^2}} \cos \omega t + \cfrac{C_2}{\sqrt{C_1^2 + C_2^2}} \sin \omega t \right).
 \]
 
 Якщо покласти, що
 \begin{align*}
 \sqrt{C_1^2 + C_2^2} &= A, \\
-\cfrac{C_1}{\sqrt{C_1^2 + C_2^2}} &= \sin \alpha, \\
-\cfrac{C_2}{\sqrt{C_1^2 + C_2^2}} &= \cos \alpha,
+\cfrac{C_1}{\sqrt{C_1^2 + C_2^2}} &= \sin \phi, \\
+\cfrac{C_2}{\sqrt{C_1^2 + C_2^2}} &= \cos \phi,
 \end{align*}
 
 тоді
-\[
-x = A \cdot (\sin\alpha \cdot \cos kt + \cos\alpha \cdot \sin kt) = A \cdot \sin (kt + \alpha),
-\]
+\begin{align*}
+x &= A \cdot (\sin\phi \cdot \cos \omega t + \cos\phi \cdot \sin \omega t) = \\
+&= A \cdot \sin (\omega t + \phi) = \\
+&= A \cdot \sin (\sqrt{\frac{k}{m}} \cdot t + \phi),
+\end{align*}
 \begin{description}
 \item[де] $A$ --- амплітуда коливання;
-\item $kt + \alpha$ --- фаза коливання;
-\item $k$ --- частота коливання.
+\item $\omega$ --- циклічна частота коливань пружинного маятника.
 \end{description}
-
-Період коливання $T=2\pi\sqrt{m/c}$ і частота $k$ залежать тільки від жорсткості пружини та маси системи:
-\begin{gather*}
-c = \cfrac{P}{\lambda_{st}} = \cfrac{mg}{\lambda_{st}}, \\
-T = 2\pi \sqrt{\cfrac{\lambda_{st}}{g}}.
-\end{gather*}
 
 Швидкість руху вантажу виходить диференціюванням рішення:
 \[
-v=\cfrac{dx}{dt}=A\cdot\cos(kt+\alpha).
+v=\cfrac{dx}{dt}=A\cdot\cos(\omega t+\phi).
 \]
 
 \subsection{Вимоги до програмного забезпечення}
@@ -129,5 +124,22 @@ v=\cfrac{dx}{dt}=A\cdot\cos(kt+\alpha).
 	\item сучасний стиль графічного інтерфейсу;
 	\item використання бази даних SQLite.
 \end{enumerate}
+
+\subsection{Функціональна модель}
+Функціональну модель процесу моделювання представлено у IDEF-нотації на рисунках~\ref{fig:idef0_l1} та~\ref{fig:idef0_l2}.
+
+\begin{figure}[H]
+  \centering
+    \includegraphics[width=0.5\textwidth]{idef0_l1}
+  \caption{Діаграма IDEF0 моделювання (концептуальний рівень)}
+  \label{fig:idef0_l1}
+\end{figure}
+
+\begin{figure}[H]
+  \centering
+    \includegraphics[width=.9\textwidth]{idef0_l2}
+  \caption{Діаграма IDEF0 моделювання}
+  \label{fig:idef0_l2}
+\end{figure}
 
 \end{document}
