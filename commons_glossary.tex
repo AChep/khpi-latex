@@ -1,0 +1,19 @@
+\usepackage[nomain,acronym,toc,nogroupskip,xindy={glsnumbers=false}]{glossaries}
+
+\makeglossaries
+\newglossarystyle{glossarystyle}{
+ \renewenvironment{theglossary}{
+ 	\begin{itemize}[label={}]}{\end{itemize}}  
+	\renewcommand*{\glossaryheader}{}
+ 	\renewcommand*{\glsgroupheading}[1]{}  
+ 	\renewcommand*{\glsgroupskip}{}
+ 	\renewcommand*{\glossentry}[2]{  
+ 		\item  
+ 		\glstarget{##1}{\glossentryname{##1}}
+ 		\space ---  
+		\space \glossentrydesc{##1}
+ 		\space [##2]  
+ 	}  
+ 	\renewcommand*{\subglossentry}[3]{\glossentry{##2}{##3}}
+ } 
+\setglossarystyle{glossarystyle}
