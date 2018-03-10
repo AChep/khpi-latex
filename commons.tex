@@ -1,5 +1,6 @@
 \usepackage{hyperref} % make refs clickable
 \usepackage{float}
+\usepackage[dvipsnames]{xcolor}
 \usepackage{pgfplots}
 \usepackage{graphicx}
 \usepackage{multirow}
@@ -10,7 +11,15 @@
 \numberwithin{equation}{section}
 
 \usepackage{listings}
-\lstset{basicstyle=\footnotesize\ttfamily,breaklines=true}
+\lstset{
+basicstyle=\footnotesize\ttfamily\color{black},
+numbers=left,
+numbersep=12pt,
+numberstyle=\footnotesize\sffamily\color{gray},
+showspaces=false,
+showstringspaces=false,
+tabsize=2
+}
 \lstset{language=Matlab}
 
 \usepackage[
