@@ -1,0 +1,42 @@
+\input{../../preamble}
+\input{../../commons}
+\input{../../commons_glossary}
+
+\usepackage{longtable,tabu}
+\usepackage{multirow}
+\usepackage{appendix}
+\usepackage{array,multirow}
+
+\newcommand{\thesitename}{The Liberty Shop}
+\graphicspath{{figures/}}
+\addbibresource{bibliography.bib}
+
+\input{glosary}
+\input{constants}
+\begin{document}
+\Ukrainian
+
+\input{title}
+\addtocounter{page}{1}
+\input{../../toc}
+\input{sec_glosary}
+\input{sec_introduction}
+\input{sec_1}
+\input{sec_2}
+\input{sec_3}
+\input{sec_conclusion}
+\input{../../bib}
+
+\begin{appendices}
+	% custom commands 
+	\newcommand\appendixsection[1]{
+		\addtocounter{section}{1}
+		\clearpage
+		\section*{Додаток \thesection. #1}
+		\addcontentsline{toc}{section}{Додаток \thesection. #1}
+	}
+
+	\input{sec_appendix_a}
+\end{appendices}
+
+\end{document}
