@@ -20,7 +20,6 @@ CREATE TABLE user (
   usr_group INTEGER NOT NULL,
   CONSTRAINT usr_email_unique UNIQUE (usr_email)
 );
-;
 CREATE TABLE ordr (
   ord_id INTEGER PRIMARY KEY,
   usr_id INTEGER REFERENCES user NOT NULL,
