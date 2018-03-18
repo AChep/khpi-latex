@@ -45,9 +45,9 @@
 \begin{description}
     \item[де] \texttt{category} --- категорія продуктів;
     \item \texttt{product} --- продукт;
-    \item \texttt{user} --- користувач/адміністратор сайту.
+    \item \texttt{user} --- користувач/адміністратор сайту: \texttt{\small secret} --- хеш-код паролю користувача, \texttt{\small group} --- числове значення групи користувача (\texttt{0} --- користувач, \texttt{10} --- адміністратор).
     \item \texttt{order} --- замовлення продуктів.
-    \item \texttt{product\_order} --- асоціативна сутність.
+    \item \texttt{product\_order} --- асоціативна сутність: \texttt{\small price} --- ціна товару на момент створення замовлення.
 \end{description}
 
 \subsection{Функціональна модель сайту}
