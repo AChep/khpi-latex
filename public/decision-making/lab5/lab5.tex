@@ -47,10 +47,31 @@
 
 Таким чином, ефективною вважається 	всяка стратегія, яка є розв'язанням останньої задачі з наступної послідовності задач:
 \begin{enumerate}[label=\arabic*)]
-	\item знайти $Q_1 = extr \, f_1(x) $.
-	\item знайти $ Q_1 = extr_{} \, f_2(x)$.
-	\item \noindent\dotfill
-	\item[$M$] знайти $Q_1 = extr_{} \, f_1(x)$
+	\item знайти  $Q_1$ = $\underset{D}{extr}$ $\,$ $f_1(x)$
+	\begin{equation}
+		D = \begin{cases} 
+			x \in A 
+		\end{cases} 
+	\end{equation}
+	\item знайти $Q_2$ = $\underset{D}{extr}$ $f_2(x)$
+	\begin{equation}
+		D = \begin{cases} 
+			x \in A \\
+			f_i(x) \geq Q_i - \Delta_i, & i \in I_1, \\
+			f_i(x) \leq Q_i + \Delta_i, & i \in I_2, \\  
+		\end{cases}
+	\end{equation} \\
+
+	\noindent\dotfill \\
+	
+	\item[$M$] знайти $Q_M$ = $\underset{D}{extr}$ $\,$ $f_1(x)$ \\
+	\begin{equation}
+		D = \begin{cases}
+			x \in A \\
+			f_i(x) \geq Q_i - \Delta_i, & i \in I_1, \\
+			f_i(x) \leq Q_i + \Delta_i, & i \in I_2, \\  
+		\end{cases}
+	\end{equation}
 \end{enumerate}
 
 Таким чином, у випадку, коли всі $\Delta_i$ --- нулі, то метод послідовних поступок виділяє тільки лексикографічно оптимальні стратегії. 
