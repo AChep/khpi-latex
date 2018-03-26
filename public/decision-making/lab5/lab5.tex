@@ -108,6 +108,290 @@
 
 Таким чином, хоча формально при використанні методу послідовних поступок досить розв'язати лише $M$ задач вигляду~\eqref{eq:q1},~\eqref{eq:q2}, \dots ,~\eqref{eq:qm}, однак для призначення величин поступок з метою з'ясування взаємозв'язку окремих критеріїв фактично доводиться розв'язувати істотно більше число подібних задач.
 
+\subsection{Математична постановка вихідної багатокритеріальної згідно до виданого завдання}
+Для виданого завдання задачі~\eqref{eq:q1},~\eqref{eq:q2} та~\eqref{eq:qm} приймуть вигляд:
+\begin{enumerate}[label=\arabic*)]
+	\item знайти: 
+	\[
+		Q_1 = \max_{\vec{x} \in A} x_1;
+	\]
+	\item знайти:
+	\[
+		Q_2 = \max_{D_M} x_2,
+	\]
+	\begin{gather*}
+		D_2= \begin{cases} 
+			\vec{x} \in A, \\
+			f_i(\vec{x}) \geq Q_i - \Delta_i, & i \in I_1;  
+		\end{cases}
+	\end{gather*}
+	\dotfill
+	\item[$M$)] знайти: 
+	\[
+		Q_M = \max_{D_M} x_3
+	\]
+	\[
+		D_M = \begin{cases}
+			\vec{x} \in A, \\
+			f_i(\vec{x}) \geq Q_i - \Delta_i, & i \in I_1.
+		\end{cases}
+	\]
+\end{enumerate}
+
+Результати розрахунків були занесені до таблиці~\ref{tab:result}.
+Графічна інтерпретація розрахунків представлена на рисунках~\ref{fig:results1} та~\ref{fig:results2}.
+
+\clearpage
+\begin{table}[H]        
+    \caption{Результати розрахунків}
+	\label{tab:result}
+    \small
+\begin{tabular}{c|cccccc}
+	$i$ & 1 & 2 & 3 & 4 & 5 & 6 \\
+	\hline
+	$\Delta_1^i$ & 0.5 & 1 & 1.5 & 2 & 2.5 & 3 \\
+	$f_1(\vec{x})$ & 3.5&	3	&2.5	&2	&1.5	&1 \\
+	$f_2(\vec{x})$ & 0.5&	1	&1.5&	2	&2.125&	2.25 \\
+	\hline
+	\multicolumn{7}{c}{$f_1=3.5$, $\Delta_1^1=0.5$} \\
+	\hline
+	$\Delta_2^i$ & 0.01&	0.02&	0.04&	0.08&	0.16&	0.32 \\
+	$f_2(\vec{x})$ & 0.49&	0.48&	0.46&	0.42&	0.34&	0.18 \\
+	$f_3(\vec{x})$ & 0.01&	0.02&	0.04&	0.08&	0.16&	0.32 \\
+	\hline
+	\multicolumn{7}{c}{$f_1=3$, $\Delta_1^2=1.0$} \\
+	\hline
+	$\Delta_2^i$ & 0.1&	0.2&	0.3&	0.4&	0.5&	0.6 \\
+	$f_2(\vec{x})$ & 0.9&	0.8&	0.7&	0.6&	0.5&	0.4 \\
+	$f_3(\vec{x})$ & 0.1&	0.2&	0.3&	0.4&	0.5&	0.6 \\
+	\hline
+	\multicolumn{7}{c}{$f_1=2.5$, $\Delta_1^3=1.5$} \\
+	\hline
+	$\Delta_2^i$ & 0.15&	0.3&	0.45&	0.6&	0.75&	0.9 \\
+	$f_2(\vec{x})$ & 1.35&	1.2&	1.05&	0.9&	0.75&	0.6 \\
+	$f_3(\vec{x})$ & 0.15&	0.3&	0.45&	0.6&	0.75&	0.9 \\
+	\hline
+	\multicolumn{7}{c}{$f_1=2.0$, $\Delta_1^4=2.0$} \\
+	\hline
+	$\Delta_2^i$ & 0.2&	0.4&	0.6&	0.8&	1.0&	1.2 \\
+	$f_2(\vec{x})$ & 1.8&	1.6&	1.4&	1.2&	1.0&	0.8 \\
+	$f_3(\vec{x})$ & 0.2&	0.4&	0.6&	0.8&	1.0&	1.2 \\
+	\hline
+	\multicolumn{7}{c}{$f_1=1.5$, $\Delta_1^5=2.125$} \\
+	\hline
+	$\Delta_2^i$ & 0.25&	0.5&	0.75&	1.0&	1.25&	1.5 \\
+	$f_2(\vec{x})$ & 1.875&	1.625&	1.375&	1.125&	0.875&	0.625 \\
+	$f_3(\vec{x})$ & 0.625&	0.875&	1.125&	1.375&	1.625&	1.875 \\
+	\hline
+	\multicolumn{7}{c}{$f_1=1$, $\Delta_1^6=2.25$} \\
+	\hline
+	$\Delta_2^i$ & 0.3&	0.6&	0.9&	1.2&	1.5&	1.8 \\
+	$f_2(\vec{x})$ & 1.95&	1.65&	1.35&	1.05&	0.75&	0.45 \\
+	$f_3(\vec{x})$ & 0.55&	0.85&	1.15&	1.45&	1.75&	2.05 \\
+\end{tabular}
+\end{table}
+
+\begin{landscape}
+\begin{figure*}[t!]
+    \centering
+    \begin{subfigure}[t]{0.33\linewidth}
+
+\begin{tikzpicture}
+\begin{axis}[
+    xlabel={$f_1(\vec{x})$},
+    ylabel={$f_2(\vec{x})$},
+]
+\node[above] at (axis cs:3.5, 0.5) {\footnotesize $\Delta_1^1 = 0.5$};
+\node[above] at (axis cs:3.0, 1.0) {\footnotesize $\Delta_1^2 = 1.0$};
+\node[above] at (axis cs:2.5, 1.5) {\footnotesize $\Delta_1^3 = 1.5$};
+\node[above] at (axis cs:2.0, 2.0) {\footnotesize $\Delta_1^4 = 2.0$};
+\node[above] at (axis cs:1.5, 2.125) {\footnotesize $\Delta_1^5 = 2.5$};
+\node[above] at (axis cs:1.0, 2.25) {\footnotesize $\Delta_1^6 = 3.0$};
+\addplot[
+    color=red,
+    mark=*,
+    ]
+    coordinates {
+    (3.5, 0.5) (3.0, 1.0) (2.5, 1.5) (2.0, 2.0) (1.5, 2.125) (1.0, 2.25)  
+    };
+
+\end{axis}
+\end{tikzpicture}
+
+    \end{subfigure}
+    ~
+    \begin{subfigure}[t]{0.33\linewidth}
+
+\begin{tikzpicture}
+\begin{axis}[
+    xlabel={$f_2(\vec{x})$},
+    ylabel={$f_3(\vec{x})$},
+]
+\node[above] at (axis cs:0.18, 0.32) {\footnotesize $\Delta_2^6 = 0.32$};
+\node[above] at (axis cs:0.34, 0.16) {\footnotesize $\Delta_2^5 = 0.16$};
+\node[above] at (axis cs:0.42, 0.08) {\footnotesize $\Delta_2^4 = 0.08$};
+\node[above] at (axis cs:0.46, 0.04) {\footnotesize $\Delta_2^3 = 0.04$};
+\node[above] at (axis cs:0.48, 0.02) {\footnotesize $\Delta_2^2 = 0.02$};
+\node[above] at (axis cs:0.49, 0.01) {\footnotesize $\Delta_2^1 = 0.01$};
+\addplot[
+    color=blue,
+    mark=*,
+    ]
+    coordinates {
+    (0.18, 0.32) (0.34, 0.16) (0.42, 0.08) (0.46, 0.04) (0.48, 0.02) (0.49, 0.01)  
+    };
+    \legend{$f_1 = 3.5$; $\Delta_1^1=0.5$}
+
+\end{axis}
+\end{tikzpicture}
+
+    \end{subfigure}
+    ~
+    \begin{subfigure}[t]{0.33\linewidth}
+ 
+\begin{tikzpicture}
+\begin{axis}[
+    xlabel={$f_2(\vec{x})$},
+    ylabel={$f_3(\vec{x})$},
+]
+\node[above] at (axis cs:0.4, 0.6) {\footnotesize $\Delta_2^6 = 0.6$};
+\node[above] at (axis cs:0.5, 0.5) {\footnotesize $\Delta_2^5 = 0.5$};
+\node[above] at (axis cs:0.6, 0.4) {\footnotesize $\Delta_2^4 = 0.4$};
+\node[above] at (axis cs:0.7, 0.3) {\footnotesize $\Delta_2^3 = 0.3$};
+\node[above] at (axis cs:0.8, 0.2) {\footnotesize $\Delta_2^2 = 0.2$};
+\node[above] at (axis cs:0.9, 0.1) {\footnotesize $\Delta_2^1 = 0.1$};
+\addplot[
+    color=blue,
+    mark=*,
+    ]
+    coordinates {
+    (0.9, 0.1) (0.8, 0.2) (0.7, 0.3) (0.6, 0.4) (0.5, 0.5) (0.4, 0.6)
+    };
+    \legend{$f_1 = 3$; $\Delta_1^2=1.0$}
+
+\end{axis}
+\end{tikzpicture}
+
+    \end{subfigure}
+    ~
+    \begin{subfigure}[t]{0.33\linewidth}
+ 
+\begin{tikzpicture}
+\begin{axis}[
+    xlabel={$f_2(\vec{x})$},
+    ylabel={$f_3(\vec{x})$},
+]
+\node[above] at (axis cs:1.35, 0.15) {\footnotesize $\Delta_2^1 = 0.15$};
+\node[above] at (axis cs:1.2, 0.3) {\footnotesize $\Delta_2^2 = 0.3$};
+\node[above] at (axis cs:1.05, 0.45) {\footnotesize $\Delta_2^3 = 0.45$};
+\node[above] at (axis cs:0.9, 0.6) {\footnotesize $\Delta_2^4 = 0.6$};
+\node[above] at (axis cs:0.75, 0.75) {\footnotesize $\Delta_2^5 = 0.75$};
+\node[above] at (axis cs:0.6, 0.9) {\footnotesize $\Delta_2^6 = 0.9$};
+\addplot[
+    color=blue,
+    mark=*,
+    ]
+    coordinates {
+    (1.35, 0.15) (1.2, 0.3) (1.05, 0.45) (0.9, 0.6) (0.75, 0.75) (0.6, 0.9)
+    };
+    \legend{$f_1 = 2.5$; $\Delta_1^3=1.5$}
+
+\end{axis}
+\end{tikzpicture}
+
+    \end{subfigure}
+    \caption{Результати розрахунків}
+    \label{fig:results1}
+\end{figure*}
+
+\begin{figure*}[t!]
+    \centering
+    \begin{subfigure}[t]{0.33\linewidth}
+ 
+\begin{tikzpicture}
+\begin{axis}[
+    xlabel={$f_2(\vec{x})$},
+    ylabel={$f_3(\vec{x})$},
+]
+\node[above] at (axis cs:1.8, 0.2) {\footnotesize $\Delta_2^1 = 0.2$};
+\node[above] at (axis cs:1.6, 0.4) {\footnotesize $\Delta_2^2 = 0.4$};
+\node[above] at (axis cs:1.4, 0.6) {\footnotesize $\Delta_2^3 = 0.6$};
+\node[above] at (axis cs:1.2, 0.8) {\footnotesize $\Delta_2^4 = 0.8$};
+\node[above] at (axis cs:1, 1) {\footnotesize $\Delta_2^5 = 1.0$};
+\node[above] at (axis cs:0.8, 1.2) {\footnotesize $\Delta_2^6 = 1.2$};
+\addplot[
+    color=blue,
+    mark=*,
+    ]
+    coordinates {
+    (1.8, 0.2) (1.6, 0.4) (1.4, 0.6) (1.2, 0.8) (1, 1) (0.8, 1.2)
+    };
+    \legend{$f_1 = 2$; $\Delta_1^4=2.0$}
+
+\end{axis}
+\end{tikzpicture}
+
+    \end{subfigure}
+    ~
+    \begin{subfigure}[t]{0.33\linewidth}
+ 
+\begin{tikzpicture}
+\begin{axis}[
+    xlabel={$f_2(\vec{x})$},
+    ylabel={$f_3(\vec{x})$},
+]
+\node[above] at (axis cs:1.875, 0.625) {\footnotesize $\Delta_2^1 = 0.25$};
+\node[above] at (axis cs:1.625, 0.875) {\footnotesize $\Delta_2^2 = 0.5$};
+\node[above] at (axis cs:1.375, 1.125) {\footnotesize $\Delta_2^3 = 0.75$};
+\node[above] at (axis cs:1.125, 1.375) {\footnotesize $\Delta_2^4 = 1.0$};
+\node[above] at (axis cs:0.875, 1.625) {\footnotesize $\Delta_2^5 = 1.25$};
+\node[above] at (axis cs:0.625, 1.875) {\footnotesize $\Delta_2^6 = 1.5$};
+\addplot[
+    color=blue,
+    mark=*,
+    ]
+    coordinates {
+    (1.875, 0.625) (1.625, 0.875) (1.375, 1.125) (1.125, 1.375) (0.875, 1.625) (0.625, 1.875)
+    };
+    \legend{$f_1 = 1.5$; $\Delta_1^5=2.5$}
+
+\end{axis}
+\end{tikzpicture}
+
+    \end{subfigure}
+    ~
+    \begin{subfigure}[t]{0.33\linewidth}
+ 
+\begin{tikzpicture}
+\begin{axis}[
+    xlabel={$f_2(\vec{x})$},
+    ylabel={$f_3(\vec{x})$},
+]
+\node[above] at (axis cs:1.95, 0.55) {\footnotesize $\Delta_2^1 = 0.3$};
+\node[above] at (axis cs:1.65, 0.85) {\footnotesize $\Delta_2^2 = 0.6$};
+\node[above] at (axis cs:1.35, 1.15) {\footnotesize $\Delta_2^3 = 0.9$};
+\node[above] at (axis cs:1.05, 1.45) {\footnotesize $\Delta_2^4 = 1.2$};
+\node[above] at (axis cs:0.75, 1.75) {\footnotesize $\Delta_2^5 = 1.5$};
+\node[above] at (axis cs:0.45, 2.05) {\footnotesize $\Delta_2^6 = 1.8$};
+\addplot[
+    color=blue,
+    mark=*,
+    ]
+    coordinates {
+    (1.95, 0.55) (1.65, 0.85) (1.35, 1.15) (1.05, 1.45) (0.75, 1.75) (0.45, 2.05)
+    };
+    \legend{$f_1 = 1$; $\Delta_1^6=3.0$}
+
+\end{axis}
+\end{tikzpicture}
+
+    \end{subfigure}
+    \caption{Результати розрахунків}
+    \label{fig:results2}
+\end{figure*}
+
+\end{landscape}
+
 \subsection{Висновки}
 В ході виконання лабораторної роботи було вивчено загальні положення методу поступок. 
 Вихідні критерії були впорядковані за важливістю, після чого виконувався підбір можливих поступок для кожного критерію, крім останнього, та оцінювався їх вплив на значення менш важливих критеріїв.
