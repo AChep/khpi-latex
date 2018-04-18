@@ -1,0 +1,143 @@
+\section{Проектування мультиагентної системи}
+\subsection{Розробка вимог до програмної системи}
+\subsubsection{Функціональні вимоги}
+Специфікацію функціональних вимог у вигляді \acrshort{uml}-діаграми прецедентів представлено на рисунку~\ref{fig:system_usecase}.
+
+\begin{figure}[H]
+	\centering
+
+	\tikzumlset{font=\footnotesize} 
+	\tikzumlset{fill usecase=white}
+	\begin{tikzpicture} 
+		\umlactor[x=4, y=2]{Актор} 
+		\umlusecase[x=1, y=0, width=3.5cm, name=import]{Імпорт конфігурації з \acrshort{json} файлу} 
+		\umlusecase[x=0, y=3, width=3.5cm, name=export]{Експорт конфігурації до \acrshort{json} файлу}
+
+		\umlusecase[x=1, y=6, width=3cm, name=correction]{Коригування моделі рішень актору} 
+		\umlusecase[x=7, y=1, name=report]{Генерація звіту} 
+		\umlusecase[x=7, y=6, width=3cm, name=current]{Перегляд поточної конфігурації} 
+		
+		\umlusecase[x=11, y=5, name=report_c_period]{Вибір періоду} 
+		\umlusecase[x=9, y=3, name=report_c]{Конфігурація звіту} 
+		\umlusecase[x=11, y=1, name=report_c_actors]{Вибір акторів}  
+
+		\umlassoc{Актор}{import}
+		\umlassoc{Актор}{export}
+		\umlassoc{Актор}{correction}
+		\umlassoc{Актор}{report}
+		\umlassoc{Актор}{current}
+
+		\umlinclude{report}{report_c}
+		\umlextend{report_c_period}{report_c}
+		\umlextend{report_c_actors}{report_c}
+	\end{tikzpicture}
+
+	\caption{\acrshort{uml}-діаграма прецедентів системи}
+	\label{fig:system_usecase}
+\end{figure}
+
+Список функціональних вимог системи:
+\begin{enumerate}[label={\arabic*)}]
+	\item система повинна мати можливість імпорту початкової конфігурації системи з \acrshort{json} файлу;
+	\item система повинна мати можливість експорту поточної конфігурації системи до \acrshort{json} файлу;
+	\item система повинна автоматично приймати рішення о розподілі потоків;
+	\item система повинна мати інструмент ручного втручання в процес прийняття рішень;
+	\item система повинна мати графічний інтерфейс перегляду поточної конфігурації логістичної системи;
+	\item система повинна мати можливість генерації звіту.
+\end{enumerate}
+
+Генеруємий звіт та графічний інтерфейс програмної системи повинен включати (для кожній ітерації та агенту системи) рівень логістичного сервісу, перенапружені ланки логістичної системи, прогнозуємий рівень збиту, показники надійності.
+
+\subsubsection{Нефункціональні вимоги}
+Список нефункціональних вимог системи:
+\begin{enumerate}[label={\arabic*)}]
+	\item система повинна бути платформонезалежною;
+	\item система повинна мати високий рівень масштабованості;
+	\item система повинна мати теоретичну можливість розміщення агентів на різних фізичних машинах.
+\end{enumerate}
+
+\subsection{Архітектура програмної системи}
+Для реалізації системи була обрана однорівнева архітектура \textit{(standalone application)}.
+
+Однорівнева архітектура була обрана через те, що користувач буде проводити дослідження з використанням розробленої системи на машині з налаштованою системою. 
+На даний момент немає сенсу розробляти багаторівневу архітектуру системи, бо продукт не є масовим.
+
+На рисунку~\ref{fig:system_component} зображена діаграма компонентів системи.
+
+\begin{figure}[H]
+	\centering
+
+	\tikzumlset{font=\footnotesize} 
+	\tikzumlset{fill component=white}
+	\begin{tikzpicture} 
+		\begin{umlcomponent}[name=jade,x=-5]{JADE}
+			\begin{umlcomponent}{Agent}
+				\umlbasiccomponent{Prediction}
+			\end{umlcomponent}
+		\end{umlcomponent}
+		\umlbasiccomponent[name=jadec, x=4]{Controller}
+		\umlbasiccomponent[name=json, x=8]{JSON Parser}
+		
+		\begin{umlcomponent}[name=ui,y=4]{Control Panel UI}
+			\umlbasiccomponent[name=conrolconf]{Net Configuration}
+			\umlbasiccomponent[name=controlintrusion, x=4]{Agent Intrusion}
+			\umlbasiccomponent[name=reportcreate, x=8]{Agent Report}
+			\umldelegateconnector{reportcreate}{json}
+		\end{umlcomponent}
+
+		\umldelegateconnector{ui}{jadec}
+		\umlHVHassemblyconnector[interface=IMessage]{jadec}{jade}
+	\end{tikzpicture}
+
+	\caption{\acrshort{uml}-діаграма компонентів системи}
+	\label{fig:system_component}
+\end{figure} 
+
+Головними компонентами є:
+\begin{itemize}
+	\item JADE --- фреймворк та віртуальна машина виконання та запуску інтелектуальних агентів та реалізації агентної платформи;
+	\item Agent --- реалізація акторів розподільчої логістичної системи як агентів;
+	\item Prediction --- методи та алгоритми для передбачення часових рядів;
+	\item Control Panel UI --- графічний інтерфейс користувача;
+	\item Net Configuration --- перегляд поточної конфігурації розподільчої логістичної системи;
+	\item Agent Intrusion --- компонент для втручання в процес прийняття рішень агентами;
+	\item Agent Report --- створення звіту;
+	\item JSON Parser --- запис та читання з JSON-формату;
+	\item Controller --- взаємодія інтерфейсу з платформою \acrshort{jade};
+\end{itemize}
+
+\subsection{Обґрунтування вибору платформи розробки та інструментальних засобів}
+\subsubsection{Мова програмування Kotlin}
+Основна мета мови Kotlin --- запропонувати більш компактну, продуктивну і безпечну альтернативу мови Java, придатну для використання всюди, де сьогодні використовується Java.
+Kotlin чудово підходить для розробки серверних застосунків, дозволяя писати стислий та експресивний код.
+Переваги Kotlin~\cite{kotlin,Panchal2017}:  
+\begin{enumerate}[label={\arabic*)}]
+	\item експресивність --- інноваційні можливості Kotlin, такі як типо-безпечні конструктори та делегати, дозволяють створювати потужні та прості у використанні абстракції;
+	\item масштабованість --- підтримка Kotlin корутин \textit{(coroutines)} допомагає створювати масштабовані застосунки;
+	\item сумістність --- Kotlin повністю сумісний зі всіма Java фреймворками;
+	\item міграція --- Kotlin підтримує покроковий перехід з кодової бази на Java;
+	\item інструменти --- Kotlin добре підтримується середовищами програмування;
+	\item легкість навчання --- для Java розробника дуже легко почати вивчати Kotlin.
+\end{enumerate}
+
+\subsubsection{Агентна платформа \acrshort{jade}}
+Згідно до таблиці порівняння платформ для розробки \acrshort{mas}, лідерами є \acrshort{jade} та AnyLogic~(таблиця~\ref{tab:mas_platform_comparsion}). 
+
+Для розробки системи було обрано платформу \acrshort{jade}, через її безкоштовну ліцензію, високу швидкість, надійність та велику кількість навчальних матеріалів.
+
+Система, яка побудована на \acrshort{jade}, може працювати в гетерогенних розподілених системах та має високий рівень масштабованості, що задовольняє нефункціональним вимогам до системи.
+
+\subsubsection{Система управління версіями Git}
+Використання системи контролю версії є необхідним для роботи над великими проектами.
+
+Система контролю дозволяє зберігати попередні версії файлів та завантажувати їх за потребою. 
+Вона зберігає повну інформацію про версію кожного з файлів, а також повну структуру проекту на всіх стадіях розробки.
+
+Git --- розподілена система керування версіями файлів та спільної роботи. Git є однією з найефективніших, надійних і високопродуктивних систем керування версіями, що надає гнучкі засоби нелінійної розробки, що базуються на відгалуженні і злитті гілок~\cite{Chacon2009}.
+
+\subsubsection{Середовище розробки застосунків Intellij IDEA}
+IntelliJ IDEA --- інтегроване середовище розробки програмного забезпечення багатьма мовами програмування. 
+Community версія середовища IntelliJ IDEA підтримує інструменти для проведення тестування TestNG і JUnit, системи контролю версій CVS, Subversion, Mercurial і Git, засоби збирання Maven і Ant, мови програмування Kotlin, Java, Java ME, Scala, Clojure і Groovy. 
+Середовище містить редактор регулярних виразів, систему перевірки коректності коду, система контролю за виконанням завдань та ін.~\cite{Kalinichenko2013}.
+
+Середовище IntelliJ IDEA є рекомендованим для розробки застосунків на мові програмування Kotlin~\cite{kotlin}.

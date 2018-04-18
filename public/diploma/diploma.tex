@@ -1,0 +1,75 @@
+% Guides
+% http://ivk.knteu.kiev.ua/docum/z_vg.pdf
+% http://www.ivk.knteu.kiev.ua/docum/prav01.pdf
+\input{../../preamble}
+\input{../../commons}
+
+\usepackage{lastpage}
+\usepackage{calc}
+\usepackage{soul}
+\usepackage{pbox}
+\usepackage{ulem}
+\usepackage{titling}
+\usepackage{framed}
+\usepackage{tabu}
+\usepackage{appendix}
+\usepackage{packages/tikz-uml}
+\usepackage[nomain,acronym,toc,nogroupskip,xindy={glsnumbers=false}]{glossaries}
+\usepackage[figure,table]{totalcount}
+
+\makeglossaries
+\newglossarystyle{mylist}{%  
+ % put the glossary in the itemize environment:  
+ \renewenvironment{theglossary}%  
+   {\begin{itemize}[label={}]}{\end{itemize}}%  
+ % have nothing after \begin{theglossary}:  
+ \renewcommand*{\glossaryheader}{}%  
+ % have nothing between glossary groups:  
+ \renewcommand*{\glsgroupheading}[1]{}%  
+ \renewcommand*{\glsgroupskip}{}%  
+ % set how each entry should appear:  
+ \renewcommand*{\glossentry}[2]{%  
+ \item % bullet point  
+ \glstarget{##1}{\glossentryname{##1}}% the entry name  
+ \space ---% the symbol in brackets  
+ \space \glossentrydesc{##1}% the description  
+ \space [##2]% the number list in square brackets  
+ }%  
+ % set how sub-entries appear:  
+ \renewcommand*{\subglossentry}[3]{%  
+   \glossentry{##2}{##3}}%  
+ } 
+\setglossarystyle{mylist}
+ 
+\graphicspath{{figures/}}
+\addbibresource{bibliography.bib}
+
+\input{glosary}
+\input{constants}
+\begin{document}
+\Ukrainian
+
+\input{title}
+\addtocounter{page}{7}
+\input{../../toc}
+\input{sec_abbreviations}
+\input{sec_introduction}
+\input{sec_1}
+\input{sec_2}
+\input{sec_3}
+\input{sec_conclusion}
+\input{../../bib}
+
+\begin{appendices}
+	% custom commands 
+	\newcommand\appendixsection[1]{
+		\addtocounter{section}{1}
+		\clearpage
+		\section*{Додаток \thesection. #1}
+		\addcontentsline{toc}{section}{Додаток \thesection. #1}
+	}
+
+	\input{sec_appendix_a}
+\end{appendices}
+
+\end{document}

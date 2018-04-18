@@ -1,0 +1,42 @@
+\appendixsection{Порівняння платформ для розробки мультагентних систем}
+{
+	\small
+	\tabulinesep=1.2mm
+	\begin{longtabu} to \textwidth {|X[2,l]|X[2,l]|X[3,l]|X[3,l]|}
+  		\caption{Порівняння платформ для розробки \acrshort{mas}~\cite{Kravari2015}}
+  		\label{tab:mas_platform_comparsion} \\
+		\hline
+		& \textbf{Agent Factory} & \textbf{\acrshort{jade}} & \textbf{AnyLogic} \\\hline\endfirsthead
+  		\caption*{Продовження таблиці \thetable{}}\\
+		\hline
+		& \textbf{Agent Factory} & \textbf{\acrshort{jade}} & \textbf{AnyLogic} \\\hline\endhead
+		% Platform properties
+		Организація & University College Dublin & Telecom Italia (TILAB) & Компанія AnyLogic \\\hline
+		Основна доменна область & Агенти для загального призначення & Розподілені мультиагентні системи & Розподілені мільтиагентні симуляції \\\hline
+		Ліцензія & LGPL & LGPL & Комерційна та академічна ліцензії \\
+		\hline
+		% Usability overview
+		Простота використання & Простий / Нестача функціоналу у \acrshort{gui} & Зручний, простий \acrshort{gui}, багато звичних функцій & Середній / Багатий функціонал \acrshort{gui} \\\hline
+		Легкість вивчення платформи & Середня & Легка (багато прикладів) & Легка \\\hline
+		Масштабованість & Добра & Висока & Висока \\\hline
+		Сумісність зі стандартами & \acrshort{fipa} & \acrshort{fipa}, \acrshort{corba} & \acrshort{gis}, 3D-можливості \\
+		\hline
+		% Operating ability of each agent platform
+		Продуктивність & Добра & Висока (дуже швидка взаємодія між агентами) & Висока \\\hline
+		Надійність & Середня & Висока & Висока \\\hline
+		Мови програмування & Java, \acrshort{afapl}, AgentSpeak & Java & Java, \acrshort{uml}-RT (\acrshort{uml} для реального часу) \\\hline
+		Операційні системи & Будь-яка з \acrshort{jvm} & Будь-яка з \acrshort{jvm} & Будь-яка з \acrshort{jvm} \\
+		\hline
+		% Pragmatics overview
+		Рівень підтримки & Добрий (документація, розсилка пошти, форум) & Високий (\acrshort{faq}, розсилка пошти, список дефектів, \acrshort{api}, документація) & Високий (документація) \\\hline
+		Популярність & Низька & Висока (найпопулярніша платформа) & Середня \\\hline
+		Зрілість технології & Стабільний випуск, статус розробки (неактивний) & Стабільний випуск, статус розробки (активний) & Стабільний випуск, статус розробки (активний) \\\hline
+		Вартість & Безкоштовна & Безкоштовна & AnyLogic Advanced \$6,199, Professional \$15,800, University Researcher License \$3,500, Educational Licenses \$485 \\
+		\hline
+		% Security management overview
+		Кінцевий рівень безпеки & Підпис і шифрування & Підпис і шифрування, підтримка HTTPS & Аутентифікація \\\hline
+		Справедливість \textit{(fairness)} & Ні & Так & Так \\\hline
+		Безпека платформи & Середня & Сильна (аутентифікація, Jaas \acrshort{api}) & Сильна (закрита система) \\
+		\hline
+	\end{longtabu}
+}
