@@ -1,0 +1,62 @@
+\input{../../../preamble}
+\input{../../../commons}
+\input{../../../commons_python}
+
+\newcommand{\labnumber}{1} % first lab
+\input{../preamble}
+\input{../constants}
+
+\graphicspath{{figures/}}
+
+\begin{document}
+\Ukrainian
+
+\input{../../../title}
+\addtocounter{page}{1}
+
+\section*{Основы анализа данных на языке Python с помощью библиотеки Pandas}
+\subsubsection*{Цель работы}
+Получить практические навыки обработки и анализа больших
+объемов данных на языке Python.
+\subsubsection*{Постановка задачи}
+Необходимо с помощью методов машинного обучения получить выборку для анализа виживаемости пассажиров Титаника:
+\begin{itemize}
+  \item определить количество пассажиров, севших в порту Queenstown с дорогими билетами.
+\end{itemize}
+
+\subsection*{Тестовые задания}
+Проверка гипотезы, что чем выше социальный статус, тем больше вероятность спасения:
+\lstinputlisting{code/example1.py} 
+
+Результат выполнения программы показан на рисунке~\ref{fig:example1}.
+
+\begin{figure}[H]
+    \centering
+        \includegraphics[width=0.7\textwidth]{example1}
+    \caption{Вероятность спасения в зависимости от социального статуса}
+    \label{fig:example1}
+\end{figure}
+
+Проверка влияния количества родственников на факт спасения:  
+\lstinputlisting{code/example2.py} 
+
+Результат выполнения программы показан на рисунке~\ref{fig:example2}.
+
+\begin{figure}[H]
+    \centering
+        \includegraphics[width=0.7\textwidth]{example2}
+    \caption{Вероятность спасения в зависимости от количества родственников}
+    \label{fig:example2}
+\end{figure}
+
+\subsection{Определить количество пассажиров, севших в порту Queenstown с дорогими билетами}
+Определим дорогие билеты, как билеты, стоимость которых выше средней цены. Решением задачи будет:
+
+\lstinputlisting{code/task4.py}
+
+Результатом работы программы будет \texttt{fare\_mean = 32.204}, \texttt{result = 2}. В порту Queenstown сели два пассажира с дорогими билетами.
+
+\subsection*{Выводы}
+В результате выполнения данной лабораторной работы были получены практические навыки обработки и анализа больших объемов данных на языке Python с помощью библиотеки Pandas.
+
+\end{document}
