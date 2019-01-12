@@ -1,0 +1,97 @@
+\input{../../../preamble}
+\input{../../../commons}
+\input{../../../commons_python}
+
+\newcommand{\labnumber}{6}
+\input{../preamble}
+\input{../constants}
+
+\graphicspath{{figures/}}
+
+\begin{document}
+\Russian
+
+\input{../../../title}
+\addtocounter{page}{1}
+
+\section*{Анализ временных рядов}
+\subsubsection*{Цель работы}
+Построение модели прогнозирования временных рядов. 
+\subsubsection*{Постановка задачи}
+Написать программу для прогнозирования курса доллара к гривне.
+
+\subsection*{Ход работы}
+В качестве данных временного ряда были взяты значения курса доллара к гривне в период с 2016 года по декабрь 2018 года.
+Усредненные по неделям данные представлены на рисунке~\ref{fig:series_week}.
+
+\begin{figure}[H]
+    \centering
+        \includegraphics[width=0.7\textwidth]{series_week}
+    \caption{Временной ряд}
+    \label{fig:series_week}
+\end{figure}
+
+Для того, чтобы привести данный временной ряд к стационарному виду, была применена логарифмическая трансформация и сдвиг на первую разницу (рисунок~\ref{fig:series_week_log_diff}).
+
+\begin{figure}[H]
+    \centering
+        \includegraphics[width=0.7\textwidth]{series_week_log_diff}
+    \caption{Стационарный временной ряд}
+    \label{fig:series_week_log_diff}
+\end{figure}
+
+Проведен тест Дики -- Фуллера (таблица~\ref{tab:df_test_results}), который показал, что данный ряд является стационарным.
+
+\begin{table}[H]
+  \caption{Результат теста Дики -- Фуллера}
+  \begin{tabular}{l|l}
+    Test Statistic &                -5.837626e+00 \\
+    p-value &                        3.843316e-07 \\
+    Lags Used &                     2.000000e+00 \\
+    Number of Observations Used &    1.500000e+02 \\
+    Critical Value (1\%) &          -3.474715e+00 \\
+    Critical Value (5\%) &          -2.881009e+00 \\
+    Critical Value (10\%) &          -2.577151e+00 \\
+  \end{tabular}
+  \label{tab:df_test_results}
+\end{table}
+
+Для того, чтобы расчитать параметры \texttt{p} и \texttt{q} модели ARIMA были построены графики автокорреляционной функции (рисунок~\ref{fig:series_week_log_diff_acf}).
+
+\begin{figure}[H]
+    \centering
+    \begin{subfigure}[t]{0.5\linewidth}
+        \centering
+        \includegraphics{series_week_log_diff_acf}
+        \caption{Автокорреляционная функция}
+    \end{subfigure}%
+    ~ 
+    \begin{subfigure}[t]{0.5\linewidth}
+        \centering
+        \includegraphics{series_week_log_diff_pacf}
+        \caption{Частичная автокорреляционная функция}
+    \end{subfigure}
+    \caption{Автокорреляционные функции}
+    \label{fig:series_week_log_diff_acf}
+\end{figure}
+
+Параметрами модели были выбраны $\texttt{t}=3$, $\texttt{d}=1$, $\texttt{q}=1$.
+
+Исходный код программы для предсказания значений курса доллара по отношению к гривне: 
+\lstinputlisting{code/main.py}
+
+На рисунке представлены результаты прогнозирования временного ряда. Ошибка $RMSE = 0.696$ является большой, однако модель показывает достаточно хорошие результаты с учетом нестабильности графика.
+
+\begin{figure}[H]
+    \centering
+        \includegraphics[width=0.7\textwidth]{series_week_ARIMA}
+    \caption{Спрогнозированный и исходный временной ряд}
+    \label{fig:series_week_ARIMA}
+\end{figure}
+
+\subsection*{Выводы}
+В результате выполнения данной лабораторной работы были получены практические навыки анализа и прогнозирования временных рядов.
+Была разработана и проверена модель ARIMA для прогнозирования курса доллара к гривне.
+Данная модель, несмотря на легкость разработки, показала достаточно хорошие результаты.  
+
+\end{document}

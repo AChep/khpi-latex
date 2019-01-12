@@ -1,0 +1,51 @@
+\documentclass[a4paper,14pt,oneside,final]{extarticle}
+\usepackage[top=2cm, bottom=2cm, left=3cm, right=1cm]{geometry}
+\usepackage{scrextend}
+
+% Header and footer:
+% display page number on top|right of the page
+\usepackage{fancyhdr}
+\pagestyle{fancy}
+\fancyhf{}
+\rhead{\small \selectfont \thepage}
+\renewcommand{\headrulewidth}{0pt}
+
+\input{../../commons}
+
+\usepackage{systeme}
+\usepackage{longtable,tabu}
+\usepackage{multirow}
+\usepackage{array,multirow}
+\usepackage{pdflscape}
+\usepackage{afterpage}
+\usepackage{bm}
+\usepackage{framed}
+
+\graphicspath{{figures/}}
+
+\newenvironment{answer}
+    {\begin{oframed}}
+    {\end{oframed}}
+
+\begin{document}
+
+\begin{center}
+{\LARGE Homework}\\[24pt]
+{\large \textbf{Artem Chepurnoy}}\\[12pt]
+{2.KH201{\scriptsize H}.8a}
+\end{center}
+
+\section*{Units}
+\input{section_1_4}
+\input{section_3_7}
+
+\section*{Writing}
+\input{section_w_apple_canning}
+\input{section_w_paraphrase}
+\input{section_w_application_letter}
+\input{section_w_graphs}
+\input{section_w_process}
+\input{section_w_dream_job}
+
+\end{document}
+

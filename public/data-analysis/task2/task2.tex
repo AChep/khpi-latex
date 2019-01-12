@@ -1,0 +1,45 @@
+\input{../../../preamble}
+\input{../../../commons}
+\input{../../../commons_python}
+
+\newcommand{\tasknumber}{2} % first
+
+\input{../preamble}
+\input{../constants_task}
+\usepackage{lscape}
+\usepackage{appendix}
+
+\graphicspath{{figures/}}
+
+\begin{document}
+\Ukrainian
+
+\input{../../../title}
+\addtocounter{page}{1}
+
+\subsection{Інтелектуальна карта}
+Інтелектуальна карта для моделей представлення знань зображена на рисунку~\ref{fig:intellig}.
+
+\subsection{Концептуальна карта}
+Концептуальна карта для моделей представлення знань зображена на рисунку~\ref{fig:concept}.
+
+\subsection*{Висновки}
+Інтелектуальні карти --- це тип представлення знань, де інформація представляється у виді радіанної структури. 
+Інтелектуальні карти допомагають систематизувати дані, можуть бути використані для класифікації об’єктів або відображення ієрархічної структури даних.
+
+Концептуальні карти --- це тип представлення знань, де інформація подається у виді об’єктів предметної області та зв’язків між ними. 
+Концептуальні карти допомагають систематизувати дані, можуть бути використані для представлення знань про предметну область з великою кількістю зв’язків між об’єктами (поняттями). 
+
+\begin{appendices}
+    % custom commands 
+    \newcommand\appendixsection[1]{
+        \addtocounter{section}{1}
+        \clearpage
+        \section*{Додаток \thesection. #1}
+        \addcontentsline{toc}{section}{Додаток \thesection. #1}
+    }
+    \input{sec_appendix_a}
+    \input{sec_appendix_b}
+ \end{appendices}
+
+\end{document}

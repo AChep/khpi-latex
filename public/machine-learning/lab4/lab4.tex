@@ -1,0 +1,51 @@
+\input{../../../preamble}
+\input{../../../commons}
+\input{../../../commons_python}
+
+\newcommand{\labnumber}{4}
+\input{../preamble}
+\input{../constants}
+
+\graphicspath{{figures/}}
+
+\begin{document}
+\Russian
+
+\input{../../../title}
+\addtocounter{page}{1}
+
+\section*{Использование SOM для кластеризации}
+\subsubsection*{Цель работы}
+Получить практические навыки программирования SOM на языке Python.
+\subsubsection*{Постановка задачи}
+Сделать кластеризацию по данным Титаника и соотнести результаты с признаком <<Выживаемость>>.
+
+\subsection*{Кластеризация данных}
+Класс \texttt{SOM} предоставляет базовую реализацию SOM (Self Organizing Map):
+\lstinputlisting{code/som.py}
+
+Исходный код кластеризации помощью SOM:  
+\lstinputlisting{code/main.py}
+
+Процесс обучения представлен на рисунке~\ref{fig:learning_process}.
+
+\begin{figure}[H]
+    \centering
+        \includegraphics[width=0.7\textwidth]{learning_process}
+    \caption{Процесс обучения}
+    \label{fig:learning_process}
+\end{figure} 
+
+Результат кластеризации представлен на рисунке~\ref{fig:result}. Как видно данные не содержат строгие признаки выживаемости, поэтому было получено семь кластеров выживаемости вместо двух.  
+
+\begin{figure}[H]
+    \centering
+        \includegraphics[width=0.7\textwidth]{result}
+    \caption{Результат кластеризации}
+    \label{fig:result}
+\end{figure} 
+
+\subsection*{Выводы}
+В результате выполнения данной лабораторной работы были получены практические навыки кластеризации с использовании языка Python.
+
+\end{document}

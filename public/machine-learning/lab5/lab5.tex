@@ -1,0 +1,49 @@
+\input{../../../preamble}
+\input{../../../commons}
+\input{../../../commons_python}
+
+\newcommand{\labnumber}{5}
+\input{../preamble}
+\input{../constants}
+
+\graphicspath{{figures/}}
+
+\begin{document}
+\Russian
+
+\input{../../../title}
+\addtocounter{page}{1}
+
+\section*{Разработка многослойного перцептрона на основе Keras}
+\subsubsection*{Цель работы}
+Научиться использовать библиотеку Keras для построения MLP.
+\subsubsection*{Постановка задачи}
+Написать программу-оппонента в игру камень-ножницы-бумага.
+
+\subsection*{Ход работы}
+Класс \texttt{Forecast} позволяет предсказывать следующий ход пользователя:
+\lstinputlisting{code/main.py}
+
+После разработки програмного обеспечения было проведено его тестирование, результат которого показан в таблице~\ref{tab:result}.
+
+\begin{table}[H]
+  \caption{Результат игр с программой}
+  \begin{tabular}{l|l}
+  	User won! & User: 1, Computer: 0 \\
+	User won! & User: 2, Computer: 0 \\
+	Draw! & User: 2, Computer: 0 \\
+	Draw! & User: 2, Computer: 0 \\
+	Draw! & User: 2, Computer: 0 \\
+    $\cdots$ & $\cdots$ \\
+	User won! & User: 440, Computer: 987 \\
+	Computer won! & User: 440, Computer: 988 \\
+	Computer won! & User: 440, Computer: 989 \\
+  \end{tabular}
+  \label{tab:result}
+\end{table}
+
+\subsection*{Выводы}
+В результате выполнения данной лабораторной работы были получены практические навыки использования библиотеки Keras для построения MLP.
+Была разработана и протестирована программа, которой удалось выиграть в 989 из 1500 игр, что соответствует 66\% игр.
+
+\end{document}

@@ -1,0 +1,62 @@
+\input{../../../preamble}
+\input{../../../commons}
+\input{../../../commons_python}
+
+\newcommand{\labnumber}{2} % second lab
+\input{../preamble}
+\input{../constants}
+
+\graphicspath{{figures/}}
+
+\begin{document}
+\Russian
+
+\input{../../../title}
+\addtocounter{page}{1}
+
+\section*{Программирование нейронных сетей}
+\subsubsection*{Цель работы}
+Получить практические навыки программирования нейронных сетей на языке Python.
+\subsubsection*{Постановка задачи}
+Необходимо с помощью одно- и многослоевой нейронной сети симулировать функцию $\sin x$.
+
+\subsection*{Общая нейронная сеть}
+Класс \texttt{Network} предоставляет возможность создавать нейронные сети разной структуры и обучать их методом обратного распространения ошибки: 
+\lstinputlisting{code/network.py} 
+
+Класс \texttt{Experiment} позволяет создавать нейронные сети разных структур и проводить над ними эксперимет по моделированию функции $\sin x$:
+\lstinputlisting{code/experiment.py} 
+
+
+\subsection*{Однослойная нейронная сеть}
+Исходный код эксперимента:  
+\lstinputlisting{code/task_single_layer.py} 
+
+Результат работы представлен на рисунке~\ref{fig:single_layer_result}.
+
+\begin{figure}[H]
+    \centering
+        \includegraphics[width=0.7\textwidth]{single_layer_result}
+    \caption{Результат прогнозирования функции $\sin x$ однослойной сетью}
+    \label{fig:single_layer_result}
+\end{figure}
+
+\subsection{Многослойная нейронная сеть}
+Исходный код эксперимента:  
+\lstinputlisting{code/task_multi_layer.py} 
+
+Результат работы представлен на рисунке~\ref{fig:multi_layer_result}.
+
+\begin{figure}[H]
+    \centering
+        \includegraphics[width=0.7\textwidth]{multi_layer_result}
+    \caption{Результат прогнозирования функции $\sin x$ многослойной сетью}
+    \label{fig:multi_layer_result}
+\end{figure}
+
+\subsection*{Выводы}
+В результате выполнения данной лабораторной работы были получены практические навыки программирования нейронных сетей на языке Python.
+
+Однослойная нейронная сеть способна только к линейной квалификации, в отличии от многослойной.
+
+\end{document}

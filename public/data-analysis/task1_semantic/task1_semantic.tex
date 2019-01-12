@@ -1,0 +1,115 @@
+\input{../../../preamble}
+\input{../../../commons}
+\input{../../../commons_python}
+
+\newcommand{\tasknumber}{1} % first
+
+\input{../preamble}
+\input{../constants_task}
+
+\graphicspath{{figures/}}
+
+\begin{document}
+\Ukrainian
+
+\input{../../../title}
+\addtocounter{page}{1}
+
+\subsection{Семантична мережа}
+\textit{Петрик п'є молоко зі стакану.}
+
+На рисунку~\ref{fig:semantic_int}зображено  інтенсіональну семантичну мережу для даної фрази.
+
+\begin{figure}[H]
+    \centering
+        \includegraphics{semantic_int}
+    \caption{Інтенсіональна семантична мережа}
+    \label{fig:semantic_int}
+\end{figure}
+
+На рисунку~\ref{fig:semantic_ext} зображено екстенсіональну семантичну мережа для даної фрази.
+
+\begin{figure}[H]
+    \centering
+        \includegraphics[width=0.7\linewidth]{semantic_ext}
+    \caption{Екстенсіональна семантична мережа}
+    \label{fig:semantic_ext}
+\end{figure}
+
+\subsection{Семантична мережа з десигнатом}
+\textit{Дитина п'є молоко зі стакану.}
+
+На рисунку~\ref{fig:semantic_ext_ds} зображено семантичну мережу з десигнатом для даної фрази.
+
+\begin{figure}[H]
+    \centering
+        \includegraphics[width=0.7\linewidth]{semantic_ext_ds}
+    \caption{Семантична мережа з десигнатом}
+    \label{fig:semantic_ext_ds}
+\end{figure}
+
+Десигнатом, у даному випадку, є <<Дитина>>. 
+Це умовлено тим, що даний агент має унікальне внутрісистемне ім'я, але про нього немає повної інформації.
+
+У виді фрейму дана мережа представлена у таблиці~\ref{tab:semantic_ext_ds}.
+
+\begin{table}[H]
+  \begin{tabular}{|c|c|}
+    \hline
+    Агент & Дитина \\ \hline
+    Дія & П'є \\ \hline
+    Об'єкт & Молоко \\ \hline
+    Інструмент & Стакан \\ \hline
+  \end{tabular}
+  \caption{Семантична мережа з десигнатом}
+  \label{tab:semantic_ext_ds}
+\end{table}
+
+\subsection{Концептуальний граф}
+\textit{Мати думає, що Петрик п'є напій з молока та чаю.}
+
+На рисунку~\ref{fig:semantic_con} зображено концептуальний граф для даної фрази.
+
+\begin{figure}[H]
+    \centering
+        \includegraphics[width=\linewidth]{semantic_con}
+    \caption{Концептуальний граф}
+    \label{fig:semantic_con}
+\end{figure}
+
+\subsection{Граф Раст'є}
+\textit{Дитина п'є молоко зі стакану, щоб набути здоров'я.}
+
+На рисунку~\ref{fig:semantic_ras} зображено граф Раст'є для даної фрази.
+
+\begin{figure}[H]
+    \centering
+        \includegraphics[width=\linewidth]{semantic_ras}
+    \caption{Граф Раст'є}
+    \label{fig:semantic_ras}
+\end{figure}
+
+\subsection{Реляційний граф}
+\textit{Петрик п'є напій з молока та чаю.}
+
+На рисунку~\ref{fig:semantic_rel} зображено реляційний граф для даної фрази.
+
+\begin{figure}[H]
+    \centering
+        \includegraphics[width=\linewidth]{semantic_rel}
+    \caption{Реляційний граф}
+    \label{fig:semantic_rel}
+\end{figure}
+
+\subsection*{Висновки}
+В данній роботі були розглянуті та побудовані такі види семантичних мереж, як інтенсіональна семантична мережа, екстенсіональна семантична мережа, мережа з десигнатом, концептуальний граф, граф Раст'є та реляційний граф.
+
+Семантичні мережі використовуються для відображення зв'язків між об'єктами предметної області.
+Граф Раст'є використовується для представлення подій.
+Граф Раст'є дозволяє уникнути вкладеності графів.
+
+Семантична мережа з бінарними відношеннями назвається концептуальним графом, та використовується для систематизації концептів предметної області та зв’язків між ними.
+
+Реляційний граф використовується для класифікації та систематизації об’єктів предметної області а також для відображення зв’язків між ними.
+
+\end{document}
