@@ -1,0 +1,88 @@
+\input{../../../preamble}
+\input{../../../commons}
+\input{../../../commons_python}
+
+\newcommand{\labnumber}{3} % second lab
+\input{../preamble}
+\input{../constants}
+
+\graphicspath{{figures/}}
+
+\begin{document}
+\Ukrainian
+
+\input{../../../title}
+\addtocounter{page}{1}
+
+\section*{Написання запросів в Protege}
+
+\subsection*{Хід роботи}
+\subsubsection*{Запрос 1}
+Перші 20 екземплярів класів та їх типи:
+\lstinputlisting{code/sparql_1.txt} 
+
+Результат виконання запросу зображений на рисунку~\ref{fig:sparql_1}.
+
+\begin{figure}[H]
+	\centering
+	    \includegraphics{sparql_1}
+	\caption{Результат виконання запросу 1}
+	\label{fig:sparql_1}
+\end{figure}
+
+\subsubsection*{Запрос 2}
+Всі програми, по яким були виплати з початку 2018 року:
+\lstinputlisting{code/sparql_2.txt} 
+
+Результат виконання запросу зображений на рисунку~\ref{fig:sparql_2}.
+
+\begin{figure}[H]
+	\centering
+	    \includegraphics{sparql_2}
+	\caption{Результат виконання запросу 2}
+	\label{fig:sparql_2}
+\end{figure}
+
+\subsubsection*{Запрос 3}
+Список \texttt{Insurant} з ім'ям <<Artem Chepurnoy>>:
+\lstinputlisting{code/dl_1.txt} 
+
+Результат виконання запросу зображений на рисунку~\ref{fig:dl_1}.
+
+\begin{figure}[H]
+	\centering
+	    \includegraphics{dl_1}
+	\caption{Результат виконання запросу 3}
+	\label{fig:dl_1}
+\end{figure}
+
+\subsubsection*{Запрос 4}
+Список \texttt{Program} які покривають ризик \texttt{RiskAnxiety}:
+\lstinputlisting{code/dl_2.txt} 
+
+Результат виконання запросу зображений на рисунку~\ref{fig:dl_2}.
+
+\begin{figure}[H]
+	\centering
+	    \includegraphics{dl_2}
+	\caption{Результат виконання запросу 4}
+	\label{fig:dl_2}
+\end{figure}
+
+\subsubsection*{Запрос 5}
+Список \texttt{Contract} які покривають ризик \texttt{RiskPneumothorax}:
+\lstinputlisting{code/dl_3.txt} 
+
+Результат виконання запросу зображений на рисунку~\ref{fig:dl_3}.
+
+\begin{figure}[H]
+	\centering
+	    \includegraphics{dl_3}
+	\caption{Результат виконання запросу 5}
+	\label{fig:dl_3}
+\end{figure}
+
+\subsection*{Висновки}
+В процесі виконання лабораторної роботи, були написані різноманітні запроси для Protege.
+
+\end{document}

@@ -1,0 +1,42 @@
+\input{../../../preamble}
+\input{../../../commons}
+\input{../../../commons_python}
+
+\newcommand{\labnumber}{8}
+\input{../preamble}
+\input{../constants}
+
+\graphicspath{{figures/}}
+
+\begin{document}
+\Russian
+
+\input{../../../title}
+\addtocounter{page}{1}
+
+\section*{Радиально-базисная нейронная сеть}
+\subsubsection*{Цель работы}
+Изучение основ RBF.
+\subsubsection*{Постановка задачи}
+Реализовать решения задачи аппроксимации данных использованием искусственной нейронной сети на основе RBF. 
+
+\subsection*{Ход выполнения работы}
+Исходный код класса \texttt{RBFN}:  
+\lstinputlisting{code/RBFN.py} 
+
+Исходный код программы для аппроксимации синусоиды с использованием класса \texttt{RBFN}:  
+\lstinputlisting{code/main.py} 
+
+Результат выполнения данной программы представлен на рисунке~\ref{fig:main}.
+
+\begin{figure}[H]
+    \centering
+        \includegraphics[width=\textwidth]{main}
+    \caption{Аппроксимация синусоиды}
+    \label{fig:main}
+\end{figure}
+
+\subsection*{Выводы}
+В результате выполнения данной лабораторной работы были получены практические навыки использования радиально-базисных нейронных сетей для аппроксимации данных.
+
+\end{document}

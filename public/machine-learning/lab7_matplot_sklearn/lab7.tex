@@ -1,0 +1,85 @@
+\input{../../../preamble}
+\input{../../../commons}
+\input{../../../commons_python}
+
+\newcommand{\labnumber}{7} % third lab
+\input{../preamble}
+\input{../constants}
+
+\graphicspath{{figures/}}
+
+\begin{document}
+\Russian
+
+\input{../../../title}
+\addtocounter{page}{1}
+
+\section*{Основы визуализации и анализа данных}
+\subsubsection*{Цель работы}
+Научиться использовать возможности matplotlib и sklearn.
+
+\subsection*{Подготовка данных}
+Из исходных данных были удалены колонки \texttt{row.names}, \texttt{home.dest}, \texttt{name}, \texttt{room}, \texttt{boat}, \texttt{ticket} так как они, субъективно, не могут влиять на признак выживаемости и будут мешать обучению.
+
+\subsection*{Построить столбиковую диаграмму по возрасту и соответствующему их количеству}
+Исходный код:  
+\lstinputlisting{code/main_1.py} 
+
+Результат выполнения данной программы представлен на рисунке~\ref{fig:main_1}.
+
+\begin{figure}[H]
+    \centering
+        \includegraphics[width=\textwidth]{main_1}
+    \caption{Столбиковая диаграмма по возрасту и соответствующему их количеству}
+    \label{fig:main_1}
+\end{figure}
+
+\subsection*{Построить парную диаграмму между количеством пассажиров разделенных по половому признаку и количеству пассажиров разделенных по возрасту}
+Исходный код:  
+\lstinputlisting{code/main_2.py} 
+
+Результат выполнения данной программы представлен на рисунке~\ref{fig:main_2}.
+
+\begin{figure}[H]
+    \centering
+        \includegraphics[width=0.7\textwidth]{main_2}
+    \caption{Парная диаграмма между количеством пассажиров разделенных по половому признаку и количеству пассажиров разделенных по возрасту}
+    \label{fig:main_2}
+\end{figure}
+
+\subsection*{Получить лучшую регрессионную зависимость выживаемости от прочих показателей данных Титаника}
+Исходный код:  
+\lstinputlisting{code/main_3.py} 
+
+Результат выполнения данной программы:
+
+\begin{table}[H]
+  \begin{tabular}{l|l|l}
+    \textbf{Accuracy} & \textbf{R2 score} & \textbf{Intercept} \\\hline
+	linear & 0.329776 & 0.900708 \\
+	poly & 0.359776 & 0.899618 \\
+	rbf: & 0.362801 & 0.617190 \\
+  \end{tabular}
+  \label{tab:main_3_results}
+\end{table}
+
+\subsection*{Построить классификационную модель для выживаемости на основе деревьев решений}
+Исходный код:  
+\lstinputlisting{code/main_4.py} 
+
+Результат выполнения данной программы:
+
+\begin{table}[H]
+  \begin{tabular}{l}
+    \textbf{Accuracy} \\\hline
+	0.804124 \\
+  \end{tabular}
+  \label{tab:main_4_results}
+\end{table}
+
+\subsection*{Выводы}
+В результате выполнения данной лабораторной работы были получены практические навыки основ визуализации и анализа данных.
+
+Классификационная модель для виживаемости на основе деревьев решений показала намного более точный результат, чем регрессионная модель.
+
+\end{document}

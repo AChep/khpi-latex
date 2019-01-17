@@ -6,6 +6,7 @@
      xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
      xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
      ontologyIRI="http://www.semanticweb.org/artem/ontologies/2018/11/ontology">
+    <Prefix name="" IRI="http://www.semanticweb.org/artem/ontologies/2018/11/ontology"/>
     <Prefix name="owl" IRI="http://www.w3.org/2002/07/owl#"/>
     <Prefix name="rdf" IRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#"/>
     <Prefix name="xml" IRI="http://www.w3.org/XML/1998/namespace"/>
@@ -16,76 +17,669 @@
         <Literal>Управление страховыми договорами</Literal>
     </Annotation>
     <Declaration>
-        <Class IRI="#Document"/>
+        <Class IRI="#Case"/>
     </Declaration>
     <Declaration>
-        <Class IRI="#Entity"/>
-    </Declaration>
-    <Declaration>
-        <Class IRI="#Insurance_Case"/>
-    </Declaration>
-    <Declaration>
-        <Class IRI="#Insurance_Contract"/>
-    </Declaration>
-    <Declaration>
-        <Class IRI="#Insurance_Interest"/>
-    </Declaration>
-    <Declaration>
-        <Class IRI="#Insurance_Payments"/>
-    </Declaration>
-    <Declaration>
-        <Class IRI="#Insurance_Premiums"/>
-    </Declaration>
-    <Declaration>
-        <Class IRI="#Insurance_Program"/>
+        <Class IRI="#Contract"/>
     </Declaration>
     <Declaration>
         <Class IRI="#Insurant"/>
     </Declaration>
     <Declaration>
-        <Class IRI="#Insurer"/>
-    </Declaration>
-    <Declaration>
-        <Class IRI="#Payment"/>
+        <Class IRI="#Program"/>
     </Declaration>
     <Declaration>
         <Class IRI="#Risk"/>
     </Declaration>
     <Declaration>
-        <DataProperty IRI="#datetime"/>
+        <ObjectProperty IRI="#affected"/>
     </Declaration>
-    <SubClassOf>
-        <Class IRI="#Insurance_Contract"/>
-        <Class IRI="#Document"/>
-    </SubClassOf>
-    <SubClassOf>
-        <Class IRI="#Insurance_Program"/>
-        <Class IRI="#Document"/>
-    </SubClassOf>
-    <SubClassOf>
+    <Declaration>
+        <ObjectProperty IRI="#affectedBy"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#baseFor"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#basedOn"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#coveredBy"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#covers"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#has"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#includes"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#obliges"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#age"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#begin"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#description"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#details"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#end"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#insuredSum"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#job"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#name"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#premiumsSum"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#region"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#timestamp"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#CaseAnxiety"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#CaseAnxiety_Artem"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#CaseHeartAttack"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#CasePneumothorax"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#ContractArtem2017-2018"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#ContractArtem2018-2019"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#ContractBogdan2019-2020"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#ContractDavid2017-2018"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#ContractVlad2019-2020"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#InsurantArtem"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#InsurantBogdan"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#InsurantDavid"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#InsurantDmitriy"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#InsurantVlad"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#ProgramMedicineBasic"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#ProgramMedicineFull"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#ProgramMedicineStudent"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#RiskAnxiety"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#RiskChickenpox"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#RiskDiarrhoea"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#RiskHeartAttack"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#RiskMumps"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#RiskPneumothorax"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#RiskRubella"/>
+    </Declaration>
+    <ClassAssertion>
+        <Class IRI="#Case"/>
+        <NamedIndividual IRI="#CaseAnxiety"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Case"/>
+        <NamedIndividual IRI="#CaseAnxiety_Artem"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Case"/>
+        <NamedIndividual IRI="#CaseHeartAttack"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Case"/>
+        <NamedIndividual IRI="#CasePneumothorax"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Contract"/>
+        <NamedIndividual IRI="#ContractArtem2017-2018"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Contract"/>
+        <NamedIndividual IRI="#ContractArtem2018-2019"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Contract"/>
+        <NamedIndividual IRI="#ContractBogdan2019-2020"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Contract"/>
+        <NamedIndividual IRI="#ContractDavid2017-2018"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Contract"/>
+        <NamedIndividual IRI="#ContractVlad2019-2020"/>
+    </ClassAssertion>
+    <ClassAssertion>
         <Class IRI="#Insurant"/>
-        <Class IRI="#Entity"/>
-    </SubClassOf>
-    <SubClassOf>
-        <Class IRI="#Insurer"/>
-        <Class IRI="#Entity"/>
-    </SubClassOf>
+        <NamedIndividual IRI="#InsurantArtem"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Insurant"/>
+        <NamedIndividual IRI="#InsurantBogdan"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Insurant"/>
+        <NamedIndividual IRI="#InsurantDavid"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Insurant"/>
+        <NamedIndividual IRI="#InsurantDmitriy"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Insurant"/>
+        <NamedIndividual IRI="#InsurantVlad"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Program"/>
+        <NamedIndividual IRI="#ProgramMedicineBasic"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Program"/>
+        <NamedIndividual IRI="#ProgramMedicineFull"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Program"/>
+        <NamedIndividual IRI="#ProgramMedicineStudent"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Risk"/>
+        <NamedIndividual IRI="#RiskAnxiety"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Risk"/>
+        <NamedIndividual IRI="#RiskChickenpox"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Risk"/>
+        <NamedIndividual IRI="#RiskDiarrhoea"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Risk"/>
+        <NamedIndividual IRI="#RiskHeartAttack"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Risk"/>
+        <NamedIndividual IRI="#RiskMumps"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Risk"/>
+        <NamedIndividual IRI="#RiskPneumothorax"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Risk"/>
+        <NamedIndividual IRI="#RiskRubella"/>
+    </ClassAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#affected"/>
+        <NamedIndividual IRI="#CaseAnxiety"/>
+        <NamedIndividual IRI="#InsurantBogdan"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#affected"/>
+        <NamedIndividual IRI="#CaseAnxiety_Artem"/>
+        <NamedIndividual IRI="#InsurantArtem"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#coveredBy"/>
+        <NamedIndividual IRI="#CaseAnxiety_Artem"/>
+        <NamedIndividual IRI="#ContractArtem2017-2018"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#affected"/>
+        <NamedIndividual IRI="#CaseHeartAttack"/>
+        <NamedIndividual IRI="#InsurantDavid"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#coveredBy"/>
+        <NamedIndividual IRI="#CaseHeartAttack"/>
+        <NamedIndividual IRI="#ContractDavid2017-2018"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#affected"/>
+        <NamedIndividual IRI="#CasePneumothorax"/>
+        <NamedIndividual IRI="#InsurantArtem"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#coveredBy"/>
+        <NamedIndividual IRI="#CasePneumothorax"/>
+        <NamedIndividual IRI="#ContractArtem2018-2019"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#basedOn"/>
+        <NamedIndividual IRI="#ContractArtem2017-2018"/>
+        <NamedIndividual IRI="#ProgramMedicineStudent"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#covers"/>
+        <NamedIndividual IRI="#ContractArtem2017-2018"/>
+        <NamedIndividual IRI="#CaseAnxiety_Artem"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#obliges"/>
+        <NamedIndividual IRI="#ContractArtem2017-2018"/>
+        <NamedIndividual IRI="#InsurantArtem"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#basedOn"/>
+        <NamedIndividual IRI="#ContractArtem2018-2019"/>
+        <NamedIndividual IRI="#ProgramMedicineBasic"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#covers"/>
+        <NamedIndividual IRI="#ContractArtem2018-2019"/>
+        <NamedIndividual IRI="#CasePneumothorax"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#obliges"/>
+        <NamedIndividual IRI="#ContractArtem2018-2019"/>
+        <NamedIndividual IRI="#InsurantArtem"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#basedOn"/>
+        <NamedIndividual IRI="#ContractBogdan2019-2020"/>
+        <NamedIndividual IRI="#ProgramMedicineFull"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#obliges"/>
+        <NamedIndividual IRI="#ContractBogdan2019-2020"/>
+        <NamedIndividual IRI="#InsurantBogdan"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#basedOn"/>
+        <NamedIndividual IRI="#ContractDavid2017-2018"/>
+        <NamedIndividual IRI="#ProgramMedicineFull"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#covers"/>
+        <NamedIndividual IRI="#ContractDavid2017-2018"/>
+        <NamedIndividual IRI="#CaseHeartAttack"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#obliges"/>
+        <NamedIndividual IRI="#ContractDavid2017-2018"/>
+        <NamedIndividual IRI="#InsurantDavid"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#basedOn"/>
+        <NamedIndividual IRI="#ContractVlad2019-2020"/>
+        <NamedIndividual IRI="#ProgramMedicineFull"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#obliges"/>
+        <NamedIndividual IRI="#ContractVlad2019-2020"/>
+        <NamedIndividual IRI="#InsurantVlad"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#affectedBy"/>
+        <NamedIndividual IRI="#InsurantArtem"/>
+        <NamedIndividual IRI="#CaseAnxiety_Artem"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#affectedBy"/>
+        <NamedIndividual IRI="#InsurantArtem"/>
+        <NamedIndividual IRI="#CasePneumothorax"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#has"/>
+        <NamedIndividual IRI="#InsurantArtem"/>
+        <NamedIndividual IRI="#ContractArtem2017-2018"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#has"/>
+        <NamedIndividual IRI="#InsurantArtem"/>
+        <NamedIndividual IRI="#ContractArtem2018-2019"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#affectedBy"/>
+        <NamedIndividual IRI="#InsurantBogdan"/>
+        <NamedIndividual IRI="#CaseAnxiety"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#has"/>
+        <NamedIndividual IRI="#InsurantBogdan"/>
+        <NamedIndividual IRI="#ContractBogdan2019-2020"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#affectedBy"/>
+        <NamedIndividual IRI="#InsurantDavid"/>
+        <NamedIndividual IRI="#CaseHeartAttack"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#has"/>
+        <NamedIndividual IRI="#InsurantDavid"/>
+        <NamedIndividual IRI="#ContractDavid2017-2018"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#has"/>
+        <NamedIndividual IRI="#InsurantVlad"/>
+        <NamedIndividual IRI="#ContractVlad2019-2020"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#baseFor"/>
+        <NamedIndividual IRI="#ProgramMedicineBasic"/>
+        <NamedIndividual IRI="#ContractArtem2018-2019"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#covers"/>
+        <NamedIndividual IRI="#ProgramMedicineBasic"/>
+        <NamedIndividual IRI="#RiskPneumothorax"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#baseFor"/>
+        <NamedIndividual IRI="#ProgramMedicineFull"/>
+        <NamedIndividual IRI="#ContractBogdan2019-2020"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#baseFor"/>
+        <NamedIndividual IRI="#ProgramMedicineFull"/>
+        <NamedIndividual IRI="#ContractDavid2017-2018"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#baseFor"/>
+        <NamedIndividual IRI="#ProgramMedicineFull"/>
+        <NamedIndividual IRI="#ContractVlad2019-2020"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#covers"/>
+        <NamedIndividual IRI="#ProgramMedicineFull"/>
+        <NamedIndividual IRI="#RiskHeartAttack"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#covers"/>
+        <NamedIndividual IRI="#ProgramMedicineFull"/>
+        <NamedIndividual IRI="#RiskPneumothorax"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#baseFor"/>
+        <NamedIndividual IRI="#ProgramMedicineStudent"/>
+        <NamedIndividual IRI="#ContractArtem2017-2018"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#covers"/>
+        <NamedIndividual IRI="#ProgramMedicineStudent"/>
+        <NamedIndividual IRI="#RiskAnxiety"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#coveredBy"/>
+        <NamedIndividual IRI="#RiskAnxiety"/>
+        <NamedIndividual IRI="#ProgramMedicineStudent"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#covers"/>
+        <NamedIndividual IRI="#RiskAnxiety"/>
+        <NamedIndividual IRI="#CaseAnxiety"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#covers"/>
+        <NamedIndividual IRI="#RiskAnxiety"/>
+        <NamedIndividual IRI="#CaseAnxiety_Artem"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#coveredBy"/>
+        <NamedIndividual IRI="#RiskHeartAttack"/>
+        <NamedIndividual IRI="#ProgramMedicineFull"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#coveredBy"/>
+        <NamedIndividual IRI="#RiskPneumothorax"/>
+        <NamedIndividual IRI="#ProgramMedicineBasic"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#coveredBy"/>
+        <NamedIndividual IRI="#RiskPneumothorax"/>
+        <NamedIndividual IRI="#ProgramMedicineFull"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#covers"/>
+        <NamedIndividual IRI="#RiskPneumothorax"/>
+        <NamedIndividual IRI="#CasePneumothorax"/>
+    </ObjectPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#timestamp"/>
+        <NamedIndividual IRI="#CasePneumothorax"/>
+        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#dateTime">2018-06-01T00:00:00</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#begin"/>
+        <NamedIndividual IRI="#ContractArtem2017-2018"/>
+        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#dateTime">2017-01-01T00:00:00</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#end"/>
+        <NamedIndividual IRI="#ContractArtem2017-2018"/>
+        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#dateTime">2017-12-31T11:59:59</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#begin"/>
+        <NamedIndividual IRI="#ContractArtem2018-2019"/>
+        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#dateTime">2018-01-01T00:00:00</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#name"/>
+        <NamedIndividual IRI="#InsurantArtem"/>
+        <Literal>Artem Chepurnoy</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#name"/>
+        <NamedIndividual IRI="#InsurantBogdan"/>
+        <Literal>Bogdan Yena</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#name"/>
+        <NamedIndividual IRI="#InsurantDavid"/>
+        <Literal>David Studenikin</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#name"/>
+        <NamedIndividual IRI="#InsurantDmitriy"/>
+        <Literal>Dmitriy Sokolov</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#name"/>
+        <NamedIndividual IRI="#InsurantVlad"/>
+        <Literal>Vlad Polovyi</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#age"/>
+        <NamedIndividual IRI="#ProgramMedicineBasic"/>
+        <Literal>young</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#insuredSum"/>
+        <NamedIndividual IRI="#ProgramMedicineBasic"/>
+        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#integer">5000</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#job"/>
+        <NamedIndividual IRI="#ProgramMedicineBasic"/>
+        <Literal>dangerous</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#premiumsSum"/>
+        <NamedIndividual IRI="#ProgramMedicineBasic"/>
+        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#integer">100</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#region"/>
+        <NamedIndividual IRI="#ProgramMedicineBasic"/>
+        <Literal>Lugansk</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#age"/>
+        <NamedIndividual IRI="#ProgramMedicineFull"/>
+        <Literal>medium</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#insuredSum"/>
+        <NamedIndividual IRI="#ProgramMedicineFull"/>
+        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#integer">1000</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#job"/>
+        <NamedIndividual IRI="#ProgramMedicineFull"/>
+        <Literal>dangerous</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#premiumsSum"/>
+        <NamedIndividual IRI="#ProgramMedicineFull"/>
+        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#integer">50</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#region"/>
+        <NamedIndividual IRI="#ProgramMedicineFull"/>
+        <Literal>Luganks</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#age"/>
+        <NamedIndividual IRI="#ProgramMedicineStudent"/>
+        <Literal>young</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#insuredSum"/>
+        <NamedIndividual IRI="#ProgramMedicineStudent"/>
+        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#integer">500</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#job"/>
+        <NamedIndividual IRI="#ProgramMedicineStudent"/>
+        <Literal>stressing</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#premiumsSum"/>
+        <NamedIndividual IRI="#ProgramMedicineStudent"/>
+        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#integer">10</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#region"/>
+        <NamedIndividual IRI="#ProgramMedicineStudent"/>
+        <Literal>Luganks</Literal>
+    </DataPropertyAssertion>
     <DataPropertyDomain>
-        <DataProperty IRI="#datetime"/>
-        <Class IRI="#Insurance_Case"/>
+        <DataProperty IRI="#age"/>
+        <Class IRI="#Insurant"/>
     </DataPropertyDomain>
     <DataPropertyDomain>
-        <DataProperty IRI="#datetime"/>
-        <Class IRI="#Insurance_Contract"/>
+        <DataProperty IRI="#age"/>
+        <Class IRI="#Program"/>
     </DataPropertyDomain>
     <DataPropertyDomain>
-        <DataProperty IRI="#datetime"/>
-        <Class IRI="#Insurance_Program"/>
+        <DataProperty IRI="#begin"/>
+        <Class IRI="#Contract"/>
     </DataPropertyDomain>
     <DataPropertyDomain>
-        <DataProperty IRI="#datetime"/>
-        <Class IRI="#Payment"/>
+        <DataProperty IRI="#description"/>
+        <Class IRI="#Risk"/>
     </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty IRI="#details"/>
+        <Class IRI="#Case"/>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty IRI="#end"/>
+        <Class IRI="#Contract"/>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty IRI="#job"/>
+        <Class IRI="#Program"/>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty IRI="#name"/>
+        <Class IRI="#Insurant"/>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty IRI="#region"/>
+        <Class IRI="#Program"/>
+    </DataPropertyDomain>
+    <DataPropertyRange>
+        <DataProperty IRI="#age"/>
+        <Datatype abbreviatedIRI="xsd:string"/>
+    </DataPropertyRange>
+    <DataPropertyRange>
+        <DataProperty IRI="#begin"/>
+        <Datatype abbreviatedIRI="xsd:dateTime"/>
+    </DataPropertyRange>
+    <DataPropertyRange>
+        <DataProperty IRI="#description"/>
+        <Datatype abbreviatedIRI="xsd:string"/>
+    </DataPropertyRange>
+    <DataPropertyRange>
+        <DataProperty IRI="#details"/>
+        <Datatype abbreviatedIRI="xsd:string"/>
+    </DataPropertyRange>
+    <DataPropertyRange>
+        <DataProperty IRI="#end"/>
+        <Datatype abbreviatedIRI="xsd:dateTime"/>
+    </DataPropertyRange>
+    <DataPropertyRange>
+        <DataProperty IRI="#insuredSum"/>
+        <Datatype abbreviatedIRI="xsd:integer"/>
+    </DataPropertyRange>
+    <DataPropertyRange>
+        <DataProperty IRI="#name"/>
+        <Datatype abbreviatedIRI="xsd:string"/>
+    </DataPropertyRange>
+    <DataPropertyRange>
+        <DataProperty IRI="#premiumsSum"/>
+        <Datatype abbreviatedIRI="xsd:integer"/>
+    </DataPropertyRange>
+    <DataPropertyRange>
+        <DataProperty IRI="#region"/>
+        <Datatype abbreviatedIRI="xsd:string"/>
+    </DataPropertyRange>
+    <DataPropertyRange>
+        <DataProperty IRI="#timestamp"/>
+        <Datatype abbreviatedIRI="xsd:dateTime"/>
+    </DataPropertyRange>
 </Ontology>
 
 

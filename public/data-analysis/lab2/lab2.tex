@@ -14,21 +14,62 @@
 \input{../../../title}
 \addtocounter{page}{1}
 
-\section*{Программирование перцептрона}
-\subsubsection*{Цель работы}
-Получить практические навыки программирования перцептрона на языке Python.
+\section*{Розробка онтологічного представлення предметної області}
+\subsubsection*{Мета роботи}
+Розробка онтології в Protege для заданої предметної області.
 \subsubsection*{Постановка задачи}
-Необходимо с помощью одно- и многослоевого перцептрона симулировать функцию \texttt{sin x}.
+\begin{enumerate}
+	\item Познайомитись з середовищем Protege. 
+	\item Розробити онтологію у форматі OWL. 
+	\item Розробити ієрархію класів в онтології згідно результатів попередньої лабораторної роботи. 
+	\item Візуалізувати онтологію у вигляді графу. 
+	\item Розробити властивості класів онтології, які повинні описувати характеристики класів та відносини між класами. 
+	\item Створити екземпляри класів. 
+	\item Заповнити онтологію можливими прецедентами (25-40 прецедентів).
+\end{enumerate}
 
-\subsection*{Однослойный перцептрон}
-Проверка гипотезы, что чем выше социальный статус, тем больше вероятность спасения:
+\subsection*{Хід роботи}
+В результаті аналізу ПрО <<Управління страховими договорами>>, який був проведений, додалися наступні сутності (рисунок~\ref{fig:class_props}, рисунок~\ref{fig:data_props} та рисунок~\ref{fig:object_props}).
 
-\subsection{Многослойный перцептрон}
-Определим дорогие билеты, как билеты, стоимость которых выше средней цены. Решением задачи будет:
+\begin{figure}[H]
+    \centering
+    \begin{subfigure}[b]{0.3\textwidth}
+        \includegraphics{class_props}
+    \caption{Класи}
+    \label{fig:class_props}
+    \end{subfigure}
+    ~
+    \begin{subfigure}[b]{0.3\textwidth}
+        \includegraphics{data_props}
+    \caption{Параметри даних}
+    \label{fig:data_props}
+    \end{subfigure}
+    ~
+    \begin{subfigure}[b]{0.3\textwidth}
+        \includegraphics{object_props}
+    \caption{Об'єктні параметри}
+    \label{fig:object_props}
+    \end{subfigure}
+    \caption{Сутності онтології}
+\end{figure}
 
-Результатом работы программы будет \texttt{fare\_mean = 32.204}, \texttt{result = 2}. В порту Queenstown сели два пассажира с дорогими билетами.
+Список створених об'єктів представлено на рисунку~\ref{fig:individuals}. Візуалізація розробленої онтології у вигляді графа представлена на рисунку~\ref{fig:ontograph}.
 
-\subsection*{Выводы}
-В результате выполнения данной лабораторной работы были получены практические навыки программирования перцептрона на языке Python.
+\begin{figure}[H]
+	\centering
+	    \includegraphics{individuals}
+	\caption{Об'єкти}
+	\label{fig:individuals}
+\end{figure}
+
+\begin{figure}[H]
+	\centering
+	    \includegraphics{ontograph}
+	\caption{Графічна інтерпретація онтології}
+	\label{fig:ontograph}
+\end{figure}
+
+\subsection*{Висновки}
+В процесі виконання лабораторної роботи, була розроблена онтологія в Protege для предметної області <<Управління страховими договорами>>.
 
 \end{document}
