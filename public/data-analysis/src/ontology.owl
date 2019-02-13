@@ -486,8 +486,13 @@
     </ObjectPropertyAssertion>
     <DataPropertyAssertion>
         <DataProperty IRI="#timestamp"/>
+        <NamedIndividual IRI="#CaseHeartAttack"/>
+        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#dateTime">2018-01-01T00:00:00</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#timestamp"/>
         <NamedIndividual IRI="#CasePneumothorax"/>
-        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#dateTime">2018-06-01T00:00:00</Literal>
+        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#dateTime">2017-01-01T00:00:00</Literal>
     </DataPropertyAssertion>
     <DataPropertyAssertion>
         <DataProperty IRI="#begin"/>
@@ -675,10 +680,6 @@
     <DataPropertyRange>
         <DataProperty IRI="#region"/>
         <Datatype abbreviatedIRI="xsd:string"/>
-    </DataPropertyRange>
-    <DataPropertyRange>
-        <DataProperty IRI="#timestamp"/>
-        <Datatype abbreviatedIRI="xsd:dateTime"/>
     </DataPropertyRange>
 </Ontology>
 

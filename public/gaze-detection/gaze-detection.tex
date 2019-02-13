@@ -1,0 +1,53 @@
+\input{../../preamble}
+\input{../../commons}
+\input{../../commons_python}
+
+\usepackage{lastpage}
+\usepackage{calc}
+\usepackage{soul}
+\usepackage{pbox}
+\usepackage{ulem}
+\usepackage{titling}
+\usepackage{framed}
+\usepackage{tabu}
+\usepackage{lscape}
+\usepackage{appendix}
+\usepackage{pdflscape}
+\usepackage{longtable}
+\usepackage[figure,table]{totalcount}
+
+\input{constants}
+ 
+\lstset{language=Python}
+\graphicspath{{figures/}}
+\addbibresource{bibliography.bib}
+
+\begin{document}
+\Ukrainian
+
+%\input{title}
+\addtocounter{page}{1}
+\input{../../toc}
+\input{sec_introduction}
+\input{sec_1}
+\input{sec_2}
+\input{sec_3}
+%\input{sec_4}
+%\input{sec_5}
+%\input{sec_6}
+\input{sec_conclusion}
+\input{../../bib}
+
+\begin{appendices}
+	% custom commands 
+	\newcommand\appendixsection[1]{
+		\addtocounter{section}{1}
+		\clearpage
+		\section*{Додаток \thesection. #1}
+		\addcontentsline{toc}{section}{Додаток \thesection. #1}
+	}
+
+	\input{sec_appendix_a}
+\end{appendices}
+
+\end{document}

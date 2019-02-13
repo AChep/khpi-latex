@@ -1,11 +1,12 @@
 \input{../../../preamble}
 \input{../../../commons}
-\input{../../../commons_python}
+\input{../../../commons_clips}
 
 \newcommand{\labnumber}{4} % fourth lab
 \input{../preamble}
 \input{../constants}
 
+\lstset{language=CLIPS}
 \graphicspath{{figures/}}
 
 \begin{document}
@@ -37,11 +38,78 @@
 Описати словесно факти і правила для розроблюваного прототипу, уявити можливу ієрархію понять.
 
 Факти предметної області:
+\begin{enumerate}
+	\item \textbf{income}: low, normal, high; 
+	\item \textbf{age}: young, mature, elderly;
+	\item \textbf{status}: single, plural.
+\end{enumerate}
 
+Правила предметної області:
+\begin{enumerate}
+	\item \textbf{income} high якщо >20000, normal якщо >10000, інакше low; 
+	\item \textbf{age} elderly якщо >60, mature якщо >45, інакше young;
+	\item \textbf{status} plural якщо є родина, інакше single.
+	\item Правило результату приведено у вигляді таблиці: \\
+		\begin{tabular}{l|lll}
+			\textbf{Do I need an insurance?} & \textbf{income} & \textbf{age} & \textbf{status} \\\hline 
+			\textbf{No} & low & young & single \\ 
+			\textbf{No} & normal & young & single \\ 
+			\textbf{Yes} & high & young & single \\ 
+			\textbf{No} & low & mature & single \\ 
+			\textbf{Yes} & normal & mature & single \\ 
+			\textbf{Yes} & high & mature & single \\ 
+			\textbf{Yes} & low & elderly & single \\ 
+			\textbf{Yes} & normal & elderly & single \\ 
+			\textbf{Yes} & high & elderly & single \\ 
+			\textbf{No} & low & young & plural \\ 
+			\textbf{Yes} & normal & young & plural \\ 
+			\textbf{Yes} & high & young & plural \\ 
+			\textbf{Yes} & low & mature & plural \\ 
+			\textbf{Yes} & normal & mature & plural \\ 
+			\textbf{Yes} & high & mature & plural \\ 
+			\textbf{Yes} & low & elderly & plural \\ 
+			\textbf{Yes} & normal & elderly & plural \\ 
+			\textbf{Yes} & high & elderly & plural \\ 
+		\end{tabular}
+\end{enumerate}
 
-Перші 20 екземплярів класів та їх типи:
+Демонстрацію працездатності прототипа на кенкретних прикладах представлено на рисунках~\ref{fig:test_1},~\ref{fig:test_2},~\ref{fig:test_3},~\ref{fig:test_4}.
+
+\begin{figure}[H]
+	\centering
+	    \includegraphics{test_1}
+	\caption{Результат виконання програми №1}
+	\label{fig:test_1}
+\end{figure} 
+
+\begin{figure}[H]
+	\centering
+	    \includegraphics{test_2}
+	\caption{Результат виконання програми №2}
+	\label{fig:test_2}
+\end{figure} 
+
+\begin{figure}[H]
+	\centering
+	    \includegraphics{test_3}
+	\caption{Результат виконання програми №3}
+	\label{fig:test_3}
+\end{figure} 
+
+\begin{figure}[H]
+	\centering
+	    \includegraphics{test_4}
+	\caption{Результат виконання програми №4}
+	\label{fig:test_4}
+\end{figure} 
 
 \subsection*{Висновки}
-В процесі виконання лабораторної роботи, були написані різноманітні запроси для Protege.
+У ході виконання лабораторної роботи я сформував для ПО поле знань, список фактів, а також правил для роботи з ними. 
+Також я оволоділ базовими конструкціями мови представлення знань CLIPS, такими як deftemplate, deffacts, defrule, deffunction, defglobal. 
+Я ознайомився з принципами пошуку рішення в експертних системах, заснованих на правилах виду "ЯКЩО-ТО", формування послідовності активації правил при виведенні результату.
+
+\subsection*{Додаток}
+Вихідний код програми:
+\lstinputlisting{code/main.clp} 
 
 \end{document}

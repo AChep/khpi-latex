@@ -1,0 +1,96 @@
+\input{../../../preamble}
+\input{../../../commons}
+\input{../../../commons_clips}
+
+\newcommand{\labnumber}{5} % second lab
+\input{../preamble}
+\input{../constants}
+
+\lstset{language=CLIPS}
+\graphicspath{{figures/}}
+
+\begin{document}
+\Ukrainian
+
+\input{../../../title}
+\addtocounter{page}{1}
+
+\section*{Використання об'єктно-орієнтованого розширення CLIPS при створенні експертних систем}
+\subsection*{Мета}
+\begin{enumerate}
+	\item Навчитися вирішувати типові завдання штучного інтелекту.
+	\item Оволодіти методами об'єктно-орієнтованого розширення CLIPS.
+\end{enumerate}
+
+\subsection*{Завдання}
+\begin{enumerate}
+	\item Для обраної завдання штучного інтелекту описати розробляються класи і їх ієрархію.
+	\item Розробити і налагодити методи цих класів.
+	\item Продемонструвати працездатність експертної системи при пошуку кінцевого рішення з різних початкових станів фактів.
+\end{enumerate}
+
+\begin{center}
+	Задача штучного інтелекту: мавпа та банани
+\end{center}
+
+\subsection*{Хід роботи}
+Діаграма класів розробленої програми представлено на рисунку~\ref{fig:uml_class}.
+
+\begin{figure}[H]
+	\centering
+	    \includegraphics{uml_class}
+	\caption{UML-діаграма класів}
+	\label{fig:uml_class}
+\end{figure}
+
+Були розроблені правила для таких сценаріїв:
+\texttt{use-box-to-hold},
+\texttt{climb-box-to-hold},
+\texttt{grab-object-from-box},
+\texttt{climb-to-hold},
+\texttt{walk-to-hold},
+\texttt{drop-to-hold},
+\texttt{grab-object},
+\texttt{drop-object},
+\texttt{hold-object-to-move},
+\texttt{move-object-to-place},
+\texttt{drop-object-once-moved},
+\texttt{already-moved-object},
+\texttt{already-at-place},
+\texttt{get-on-floor-to-walk},
+\texttt{walk-holding-nothing},
+\texttt{walk-holding-object},
+\texttt{jump-onto-floor},
+\texttt{walk-to-place-to-climb},
+\texttt{drop-to-climb},
+\texttt{climb-indirectly},
+\texttt{climb-directly},
+\texttt{already-on-object}.
+
+Початковий стан системи було задано як:
+\begin{lstlisting}
+(defrule startup ""
+  =>
+  (assert (monkey (location door) (on-top-of floor) (holding blank)))
+  (assert (thing (name box) (location window)))
+  (assert (thing (name bananas) (location center-of-the-room) (on-top-of ceiling)))
+  (assert (goal-is-to (action hold) (arguments bananas))))
+\end{lstlisting}
+
+Результат виконання програми представлено на рисунку~\ref{fig:result}.
+
+\begin{figure}[H]
+	\centering
+	    \includegraphics{result}
+	\caption{Результат виконання програми}
+	\label{fig:result}
+\end{figure}
+
+\subsection*{Висновки}
+В процесі виконання лабораторної роботи, було написано програму на мові CLIPS для вирішення задачі <<Мавпа та банани>>.
+
+\subsection*{Додаток}
+Вихідний код програми:
+\lstinputlisting{code/main.clp} 
+
+\end{document}
