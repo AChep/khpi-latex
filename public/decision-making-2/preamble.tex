@@ -1,0 +1,11 @@
+\usepackage{tikz}
+
+\counterwithout{figure}{section}
+\counterwithout{table}{section}
+\counterwithout{equation}{section}
+
+\titleformat{\subsection}[block]
+  {\bfseries\filcenter}{#1}{0cm}{}
+\titlespacing{\subsection}{0cm}{21pt}{21pt}
+
+\DeclareCaptionLabelFormat{gosttable}{Таблица #2}
