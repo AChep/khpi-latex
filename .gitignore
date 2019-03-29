@@ -1,4 +1,5 @@
 # Artem Chepurnoy:
+*.DS_Store
 # My labs diploma etc.
 /projects/*
 
