@@ -1,0 +1,61 @@
+\input{../../../preamble}
+\input{../../../commons}
+
+\newcommand{\labnumber}{2} % second lab
+\input{../preamble}
+\input{../constants}
+
+\graphicspath{{figures/}}
+
+\begin{document}
+\Ukrainian
+
+\input{../../../title}
+\addtocounter{page}{1}
+
+\section*{Feature Model DSL Tool для Visual Studio}
+\subsubsection*{Цель работы}
+Знакомство с инструметарием Feature Model DSL Tool для Visual Studio.
+
+\subsection{Знакомство с инструментарием}
+Feature Model DSL Tool for Visual Studio расширяет идею поддержки Visual Studio 2008/2010 и предоставляет следующие функции:
+\begin{enumerate}
+    \item Моделирование моделей объектов, поддерживаемое интегрированным интерфейсом Visual Studio: визуальный дизайнер, панель инструментов и окно свойств.
+    \item Проверка модели объекта через панель инструментов Список ошибок.
+    \item Перекрестная навигация.
+    \item Экспорт HTML отчета из диаграммы модели объекта.
+\end{enumerate}
+
+\subsection{Моделирование доменной области}
+Доменная область представляет собой задачу дистрибьюции логистической системы. 
+Начальная структура логистической цели вводится пользователем. 
+Система должна показать график уровня сервиса смоделированной логистической системы.
+
+Этот домен не включает в себя качественное моделирование спроса людей и изменения их предпочтений.
+
+Модель потоков данных предметной области показана на рисунке~\ref{fig:dfd}.
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.65\textwidth]{dfd}
+    \caption{DFD модель}
+    \label{fig:dfd}
+\end{figure}
+
+Результат моделирования представлен на рисунке~\ref{fig:dsl}. 
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.8registrationSource\textwidth]{dsl}
+    \caption{Feature модель}
+    \label{fig:dsl}
+\end{figure}
+
+В дальнейшем функционал системы был разбит на четыре модуля: моделирование, сохранение отчета, загрузка данных, просмотр отчета.
+
+\subsection*{Выводы}
+В ходе данной лабораторной работы было проведено знакомство с Feature Model DSL Tool для Visual Studio.
+
+Было разработана модель представления доменной области <<моделирование логистических систем дистрибуции>>, спроектирована структура функций. 
+
+\end{document}

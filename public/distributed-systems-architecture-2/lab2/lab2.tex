@@ -1,0 +1,73 @@
+\input{../../../preamble}
+\input{../../../commons}
+
+\newcommand{\labnumber}{2} % second lab
+\input{../preamble}
+\input{../constants}
+
+\graphicspath{{figures/}}
+
+\begin{document}
+\Ukrainian
+
+\input{../../../title}
+\addtocounter{page}{1}
+
+\section*{Feature Oriented Domain Analysis}
+\subsubsection*{Цель работы}
+Знакомство с методом доменного моделирования FODA (Feature Oriented Domain Analysis) и инструметарием Feature IDE.
+
+\subsection*{Ход работы}
+\begin{enumerate}
+    \item Контекстный анализ (Context Analysis).
+    \item Моделирование домена (Domain Modeling).
+    \item Моделирование архитектуры (Architectural Modeling).
+\end{enumerate}
+
+\subsection{Контекстный анализ}
+Доменная область представляет собой задачу дистрибьюции логистической системы. 
+Начальная структура логистической цели вводится пользователем. 
+Система должна показать график уровня сервиса смоделированной логистической системы.
+
+Этот домен не включает в себя качественное моделирование спроса людей и изменения их предпочтений.
+
+Модель потоков данных предметной области показана на рисунке~\ref{fig:dfd}.
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.65\textwidth]{dfd}
+    \caption{DFD модель}
+    \label{fig:dfd}
+\end{figure}
+
+\subsection{Моделирование домена}
+Для моделирования домена была использована FeatureIDE. 
+Результат моделирования представлен на рисунке~\ref{fig:model}. 
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=\textwidth]{model}
+    \caption{Feature модель}
+    \label{fig:model}
+\end{figure}
+
+Функционал системы был разбит на четыре модуля: моделирование, сохранение отчета, загрузка данных, просмотр отчета.
+
+\subsection{Разработка функционала}
+За основу архитектуры было взята Hexagonal-архитектура.
+
+Структура архитектурных уровней будет иметь вид, представленный на рисунке~\ref{fig:arch}.
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.5\textwidth]{arch}
+    \caption{Модель архитектуры}
+    \label{fig:arch}
+\end{figure}
+
+\subsection*{Выводы}
+В ходе данной лабораторной работы было проведено знакомство с анализом FODA.
+
+Было разработана модель представления доменной области <<моделирование логистических систем дистрибуции>> с помощью FeatureIDE, спроектирована структура функций, показана возможная архитектура системы. 
+
+\end{document}
