@@ -1,0 +1,43 @@
+\section{Experiments and results}
+\subsection{Model training}
+The LSTM network was trained by optimizing the cross-entropy loss between the true annotation distribution and the predicted annotation distribution. We used the Adam optimiser~\cite{Kingma2014} to train the parameters in the network, which had the best overall performances on sparse training data, according to~\cite{Ruder2016}. 
+
+To make the trained models less prone to overfitting, we applied dropout on the outputs of the word embedding layer, on the outputs of the LSTM encoding layer, as well as on the outputs of the recurrent layer. To reduce the space of hyper-parameter searching, we set $d_0$ to $500$, set $d_1$ to $64$, set a dropout rate of $0.2$ on the outputs of the word embedding layer, set a dropout rate of 0.3
+on the outputs of the LSTM encoding layer, based on our former
+neural network training experiences.
+
+We initialized the word embedding matrix $W_E$ with the 500-dimension pre-trained Glove embeddings of Wikipedia data. The word embedding matrix was updated during the training process, to be adjusted for the clickbait detection scenario.
+
+We implemented the LSTM network using Keras~\cite{Keras}.
+
+\subsection{Results}
+We trained the network on 2000 titles with 10 epochs. The dynamic of the accuracy of predictions is shown on figure~\ref{fig:results_training}. 
+
+\begin{figure}[H]
+    \centering
+  \begin{tikzpicture}
+    \begin{axis}[ 
+      xlabel={Epoch},
+      ylabel={Accuracy},
+      xmin=0,xmax=10,ymin=0,ymax=1
+    ] 
+      \addplot
+          coordinates {
+              (0,0.718) [0]
+              (1,0.734) [1]
+              (2,0.785) [2]
+              (3,0.802) [3]
+              (4,0.800) [4]
+              (5,0.817) [5]
+              (6,0.824) [6]
+              (7,0.841) [7]
+              (8,0.845) [8]
+              (9,0.853) [9]
+          };
+    \end{axis}
+  \end{tikzpicture}
+  \caption{Dynamic of the accuracy}
+  \label{fig:results_training}
+\end{figure}
+
+The evaluation was performed on a MacBook Pro 2018. The Clickbait Detector achieved  an accuracy of $0.853$ (run time $\approx 30$ sec.) unofficially ranked top 20 in The Clickbait Challenge~\cite{Clickbait2016}. Thus, the detector achieved consistent and competitive performance across multiple evaluation metrics, a with very low computational cost.

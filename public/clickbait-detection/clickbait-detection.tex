@@ -1,0 +1,46 @@
+% !TEX program = xelatex
+
+\documentclass[a4paper,14pt,oneside,final]{extarticle}
+% \usepackage[top=2cm, bottom=2cm, left=3cm, right=1cm]{geometry}
+\usepackage{scrextend}
+
+% Header and footer:
+% display page number on top|right of the page
+\usepackage{fancyhdr}
+\pagestyle{fancy}
+\fancyhf{}
+\rhead{\small \selectfont \thepage}
+\renewcommand{\headrulewidth}{0pt}
+
+\input{../../commons}
+
+\usepackage{systeme}
+\usepackage{longtable,tabu}
+\usepackage{multirow}
+\usepackage{array,multirow}
+\usepackage{pdflscape}
+\usepackage{afterpage}
+\usepackage{bm}
+\usepackage{framed}
+
+\graphicspath{{figures/}}
+\addbibresource{bibliography.bib}
+
+\title{Using LSTM Neural Network for Detecting Clickbaits in Online News Media}
+\author{Artem Chepurnoy}
+
+\begin{document}
+
+\maketitle
+
+\addtocounter{page}{1}
+\input{sec_introduction}
+\input{sec_related_work}
+\input{sec_data_analysis}
+\input{sec_approach}
+\input{sec_results}
+\input{sec_conclusion}
+
+\printbibliography[heading=bibintoc, title={References}]
+
+\end{document}
