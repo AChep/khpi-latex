@@ -43,21 +43,21 @@
 \newcommand{\sectionbreak}{\clearpage}
 
 \titleformat{\section}
-  {\centering}{\thesection \quad}{0pt}{\MakeUppercase{#1}}
+  {\bfseries\centering}{\thesection \quad}{0pt}{\MakeUppercase{#1}}
 \titleformat{name=\section,numberless}[block]
-  {\centering}{}{0cm}{\MakeUppercase{#1}}
+  {\bfseries\centering}{}{0cm}{\MakeUppercase{#1}}
 \titleformat{\subsection}[block]
-  {\bfseries}{\thesubsection \quad #1}{0cm}{}
+  {\bfseries}{\hspace*{1.25cm}\thesubsection \quad #1}{0cm}{}
 \titleformat{name=\subsection,numberless}[block]
-  {\bfseries}{}{0cm}{#1}
+  {\bfseries}{\hspace*{1.25cm}#1}{0cm}{}
 \titleformat{\subsubsection}[block]
-  {\bfseries}{\thesubsubsection \quad #1}{0cm}{}
+  {\bfseries}{\hspace*{1.25cm}\thesubsubsection \quad #1}{0cm}{}
 \titleformat{name=\subsubsection,numberless}[block]
-  {\bfseries}{}{0cm}{#1}
+  {\bfseries}{\hspace*{1.25cm}#1}{0cm}{}
 
 \titlespacing{\section} {0cm}{0cm}{21pt}
-\titlespacing{\subsection} {\parindent}{21pt}{0cm}
-\titlespacing{\subsubsection} {\parindent}{0cm}{0cm}
+\titlespacing{\subsection} {0cm}{21pt}{0cm}
+\titlespacing{\subsubsection} {0cm}{0cm}{0cm}
 
 % Lists
 \usepackage{enumitem}
