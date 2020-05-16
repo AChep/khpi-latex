@@ -1,0 +1,30 @@
+.editorHeader {
+	margin-bottom: 1em;
+}
+
+.editorHeader * {
+  display: inline;
+}
+
+.editorHeader p {
+  color: lightgray;
+  margin-left: 1em;
+}
+
+.editorFooter {
+	margin-top: 2em;
+}
+
+.editorFooter * {
+  display: inline;
+	margin-right: 1em;
+}
+
+.editors {
+	padding: 1em;
+	font-family: "Open Sans";
+  font-size: 100%;
+  background-color: #fff;
+  border: 1pt solid #eee;
+  border-radius: 0.5em;
+}

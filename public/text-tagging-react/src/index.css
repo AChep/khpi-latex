@@ -1,0 +1,35 @@
+body {
+    margin: 0px auto;
+    max-width: 960px;
+    line-height: 1.6;
+    font-size: 18px;
+    background-color: #f6f6f6;
+    color: #444;
+    padding: 0 10px
+}
+
+h1,
+h2,
+h3 {
+    line-height: 1.2
+}
+
+.btn {
+    background-color: teal;
+    border-radius: 0.5em;
+    color: white;
+    cursor: pointer;
+    padding: 4pt;
+    padding-left: 1em;
+    padding-right: 1em;
+}
+
+.btn:hover {
+    background-color: steelblue !important;
+}
+
+.btn:disabled,
+.btn[disabled]{
+    cursor:not-allowed !important;
+    background-color: grey !important;
+}

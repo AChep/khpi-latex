@@ -1,0 +1,1 @@
+https://empendium.com/ua/chapter/B27.II.2.5.

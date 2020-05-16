@@ -1,0 +1,1 @@
+https://www.vz.kiev.ua/arterialna-gipertenziya-likuyemo-pravilno/

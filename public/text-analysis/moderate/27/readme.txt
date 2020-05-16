@@ -1,0 +1,1 @@
+https://compendium.com.ua/uk/clinical-guidelines-uk/cardiology-uk/section-6-uk/glava-5-vzayemodiya-likarskih-zasobiv/

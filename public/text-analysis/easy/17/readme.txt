@@ -1,0 +1,1 @@
+https://www.dobrobut.com/ua/library/c-osnovnye-simptomy-infarkta-miokarda-tipicnoj-i-atipicnyh-form

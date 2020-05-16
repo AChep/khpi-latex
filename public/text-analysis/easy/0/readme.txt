@@ -1,0 +1,1 @@
+http://www.adm-pl.gov.ua/story/oznaki-gostrogo-infarktu-miokarda-sposobi-samodopomogi-ta-dopomogi-postrazhdalomu-do-pributtya

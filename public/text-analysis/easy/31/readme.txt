@@ -1,0 +1,1 @@
+https://www.unian.ua/health/country/878019-prichini-i-simptomi-stenokardiji.html

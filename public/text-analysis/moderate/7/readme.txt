@@ -1,0 +1,1 @@
+https://dec.gov.ua/materials/shhodo-vnesennya-zmin-do-instrukczi-dlya-medichnogo-zastosuvannya-likarskih-zasobiv-shho-mistyat-loperamide-sindrom-brugada-v-konteksti-peredozuvannya/

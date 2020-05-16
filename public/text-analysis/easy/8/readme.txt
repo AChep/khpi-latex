@@ -1,0 +1,1 @@
+http://www.pfizermed.com.ua/public/medical-content/arterialna-hypertensia

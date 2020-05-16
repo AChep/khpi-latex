@@ -1,0 +1,1 @@
+http://www.webcardio.org/beta-adrenoblokatory-mekhanizmy-diji-klasyfikacija-pokazannja-i-protypokazannja-do-zastosuvannja.aspx

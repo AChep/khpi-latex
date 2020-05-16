@@ -1,0 +1,1 @@
+http://www.adm-pl.gov.ua/story/poradi-kardiologa-shchodo-obstezhennya-ditey-iz-vadami-sercya

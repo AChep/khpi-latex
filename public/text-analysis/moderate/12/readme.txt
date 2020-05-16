@@ -1,0 +1,1 @@
+https://compendium.com.ua/dec/261168/

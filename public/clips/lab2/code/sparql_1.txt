@@ -1,0 +1,4 @@
+SELECT distinct ?ind ?class
+	WHERE { ?ind rdf:type ?class }
+ORDER BY ?class
+LIMIT 20

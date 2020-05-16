@@ -1,0 +1,1 @@
+https://moz.gov.ua/article/health/simptomi-infarktu-miokarda-u-zhinok-jak-viznachiti-i-koli-viklikati-103

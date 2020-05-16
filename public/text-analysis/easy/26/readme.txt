@@ -1,0 +1,1 @@
+https://rivnecardio.info/index.php/blog/item/38-ishemichna-khvoroba-sertsia

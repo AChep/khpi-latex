@@ -1,0 +1,1 @@
+https://www.depo.ua/ukr/life/ponad-tretina-zhinok-u-sviti-zaznavala-nasilstva-oon-201911251069299

@@ -1,0 +1,1 @@
+https://www.umj.com.ua/article/125609/v-ukrayini-znizhuyetsya-smertnist-vid-infarktu-miokarda

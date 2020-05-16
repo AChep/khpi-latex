@@ -1,0 +1,1 @@
+https://pidruchniki.com/77874/meditsina/raptova_koronarna_smert_pervinna_zupinka_krovoobigu_printsipi_sertsevo-_legenevoyi_reanimatsiyi

@@ -1,0 +1,1 @@
+https://phc.org.ua/kontrol-zakhvoryuvan/neinfekciyni-zakhvoryuvannya/sercevo-sudinni-zakhvoryuvannya/gipertoniya

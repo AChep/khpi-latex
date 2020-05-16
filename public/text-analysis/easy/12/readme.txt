@@ -1,0 +1,1 @@
+https://nubip.edu.ua/node/12962

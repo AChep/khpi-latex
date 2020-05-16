@@ -1,0 +1,1 @@
+https://moz.gov.ua/article/health/jak-vijaviti-infarkt-i-scho-robiti-pri-sercevomu-napadi-komentue-ekspert

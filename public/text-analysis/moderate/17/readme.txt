@@ -1,0 +1,1 @@
+https://zakon.rada.gov.ua/laws/show/v007p710-19/print

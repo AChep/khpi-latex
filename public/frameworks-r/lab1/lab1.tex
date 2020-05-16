@@ -1,0 +1,135 @@
+\input{../../../preamble}
+\input{../../../commons}
+\input{../../../commons_python}
+
+\newcommand{\labnumber}{1} % first lab
+\input{../preamble}
+\input{../constants}
+
+\graphicspath{{figures/}}
+
+\begin{document}
+\Ukrainian
+
+\input{../../../title}
+\addtocounter{page}{1}
+
+\section{Використання мови програмування R та бібліотеки Shiny для побудови веб-додатку для візуалізації методів машинного навчання}
+\subsection{Вихідні дані}
+В якості даних часового ряду було обрано вартість золота (в USD) в період з 2010 року по 2015 рік. 
+Візуалізацію даного часового ряду представлено на рисунку~\ref{fig:data}.
+
+\begin{figure}[H]
+    \centering
+        \includegraphics[width=0.6\textwidth]{data}
+    \caption{Вартість золота в період з 2010 по 2015 років}
+    \label{fig:data}
+\end{figure}
+
+\subsection{Аналіз даних}
+Для перевірки ряду на стаціонарність було побудовано гістограму вихідного ряду (рисунок~\ref{fig:hist}).
+
+\begin{figure}[H]
+    \centering
+        \includegraphics[width=0.6\textwidth]{hist}
+    \caption{Гістограма вихідного ряду}
+    \label{fig:hist}
+\end{figure}
+
+Закон разподілення вихідного ряду відрізняється від нормального а отже необхідно використовувати непараметричні тести для перевірки стаціонарністі ряду.
+
+\subsubsection{Тест Дікі-Фулера}
+Результат виконання теста:  
+\begin{lstlisting}
+> adf.test(data, alternative = "stationary") 
+
+Augmented Dickey-Fuller Test
+Dickey-Fuller = -0.77188, 
+Lag order = 16, 
+p-value = 0.9642
+\end{lstlisting}
+
+Оскільки значення $\textup{p-value} > 0.05$, то можно вважати цей ряд нестаціонарним. 
+
+\subsection{Розробка моделі прогнозування}
+Для приведення данного часового ряду до стаціонарного виду, була застосована логарифмічна трансформація та здвиг на першу різницю (рисунок~\ref{fig:temp}).  
+
+\begin{figure}[H]
+    \centering
+        \includegraphics[width=0.6\textwidth]{temp}
+    \caption{Вихідний ряд у стаціонарному виді}
+    \label{fig:temp}
+\end{figure} 
+
+Проведено тест Дікі-Фулера, який показав, що даний ряд є стаціонарним:
+\begin{lstlisting}
+> adf.test(data, alternative = "stationary") 
+
+Augmented Dickey-Fuller Test
+Dickey-Fuller = -16.169, 
+Lag order = 16, 
+p-value = 0.01
+\end{lstlisting}
+
+\subsection{Прогнозування}
+\subsubsection{ARIMA}
+Результат прогнозування за допомогою метода ARIMA з використанням бібліотеки \texttt{forecast} зображено на рисунку~\ref{fig:out_arima}.  
+
+\begin{figure}[H]
+    \centering
+        \includegraphics[width=1\textwidth]{out_arima}
+    \caption{ARIMA}
+    \label{fig:out_arima}
+\end{figure} 
+
+\subsubsection{ARFIMA}
+Результат прогнозування за допомогою метода ARFIMA з використанням бібліотеки \texttt{forecast} зображено на рисунку~\ref{fig:out_arfima}.  
+
+\begin{figure}[H]
+    \centering
+        \includegraphics[width=1\textwidth]{out_arfima}
+    \caption{ARFIMA}
+    \label{fig:out_arfima}
+\end{figure} 
+
+\subsubsection{TBATS}
+Результат прогнозування за допомогою метода TBATS з використанням бібліотеки \texttt{forecast} зображено на рисунку~\ref{fig:out_tbats}.  
+
+\begin{figure}[H]
+    \centering
+        \includegraphics[width=1\textwidth]{out_tbats}
+    \caption{TBATS}
+    \label{fig:out_tbats}
+\end{figure} 
+
+\subsection{Розробка веб-додатку}
+Макет додатку представлено на рисунку~\ref{fig:app_mockup}.\\[0.3em]
+
+\begin{figure}[H]
+    \centering
+        \includegraphics[width=0.6\textwidth]{app_mockup}
+    \caption{Макет додатку}
+    \label{fig:app_mockup}
+\end{figure} 
+
+У якості даних було обрано вартість золота, GBP, EUR, CAD та популярні криптовалюти BTC, ETH, XRP. 
+У якості методів прогнозування було обрано ETS, ARIMA, ARFIMA, TBATS.
+
+Код веб-додатку:
+\lstinputlisting{code/main.r}
+
+Скріншот веб-додатку представлений на рисунку~\ref{fig:app_screen}.
+
+\begin{figure}[H]
+    \centering
+        \includegraphics[width=1\textwidth]{app_screen}
+    \caption{Скріншот додатку}
+    \label{fig:app_screen}
+\end{figure} 
+
+\subsection*{Висновки}
+У ході виконання розрахунково-графічного завдання було виконано аналіз числового ряду вартості золота, побудовано прогноз числового ряду за допомогою методів ETS, ARIMA, ARFIMA, TBATS. 
+
+Мова програмування R добре підходить для таких задач, та має багато готових к використанню бібліотек. 
+
+\end{document}

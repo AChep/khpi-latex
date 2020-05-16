@@ -1,0 +1,47 @@
+% !TEX program = xelatex
+\documentclass[a4paper,14pt,oneside,final]{extarticle}
+\usepackage{scrextend}
+
+\usepackage[T2A,T1]{fontenc}
+\usepackage[ukrainian,russian,english]{babel}
+\usepackage{tempora}
+\usepackage{fontspec}
+\setmainfont{tempora}
+
+% Зачем: Отключает использование изменяемых межсловных пробелов.
+% Почему: Так не принято делать в текстах на русском языке.
+\frenchspacing
+
+\input{../../commons}
+
+\usepackage{subcaption}
+
+\counterwithout{subsection}{section}
+\counterwithout{subsubsection}{section}
+\counterwithin{subsubsection}{subsection}
+
+\begin{document}
+\Russian
+
+\begin{flushright}
+2.КН201н.8а \\[0.4em]
+{\large Чепурной~А.~С.} \\[0.8em]
+\end{flushright}
+
+\begin{enumerate}
+    \item Определения и примеры:
+    \begin{enumerate}
+        \item Программный продукт --- программное средство, предназначенное для поставки, передачи, продажи пользователю.
+        \item Функциональные требования описывают функции, которые должно выполнять разрабатываемое ПО.
+        \item Нефункциональные требования --- требования, определяющие свойства, которые система должна демонстрировать, или ограничения, которые она должна соблюдать, не относящиеся к поведению системы. \textit{Например, производительность, удобство сопровождения, расширяемость, надежность, факторы эксплуатации.}
+    \end{enumerate}
+    \item Информация о проектной работе.
+    \begin{enumerate}
+        \item В каких проектах участвуете в настоящее время при обучении по дуальной форме на 5-м курсе: \\
+        Работа в компании CHI Software (аутстаф, не партнер кафедры) на позиции Android Developer.
+        \item Насколько тема д/р связана с тематикой проектов предыдущего пункта: \\
+        Связана в определенной степени: частично совпадают используемые технологии (Kotlin, Kotlin Coroutines). 
+    \end{enumerate}
+\end{enumerate}
+
+\end{document}

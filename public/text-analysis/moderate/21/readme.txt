@@ -1,0 +1,1 @@
+https://compendium.com.ua/uk/tutorials-uk/vnutrishnya-meditsina/2-rozdil-zakhvoriuvannia-sertsia-ta-sudyn/2-8-aritmiyi-ta-blokadi-sertsya/

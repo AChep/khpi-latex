@@ -1,0 +1,1 @@
+https://www.medcenter.lviv.ua/blogs/vazlivist-mrt-cerca-pid-cas-difirencijnoi-diagnostiki-miokarditiv-i-kardiomiopatij_n573

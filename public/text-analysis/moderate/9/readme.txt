@@ -1,0 +1,1 @@
+https://dec.gov.ua/?ZG93bmxvYWQ=L3dwLWNvbnRlbnQvdXBsb2Fkcy9mYXJtYWtvbmFnbHlhZC9jaGFuZ2VzL24xMF9pbnMxMC5kb2M=

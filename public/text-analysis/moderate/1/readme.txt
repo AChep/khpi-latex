@@ -1,0 +1,1 @@
+http://www.webcardio.org/korekcija-pidvyshhennja-transaminaz-pechinky-pry-provedenni-ghipolipidemichnoji-terapiji-fokus-na-ursokhol.aspx

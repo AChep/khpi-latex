@@ -1,0 +1,1 @@
+https://www.obozrevatel.com/ukr/health/cardiology/ishemichna-hvoroba-sertsya-yak-uniknuti-smertelnoi-zagrozi.htm

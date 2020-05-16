@@ -1,0 +1,1 @@
+https://uteka.ua/ua/publication/commerce-12-xozyajstvennye-operacii-9-osnovnye-sredstva-naxodyashhiesyav-zone-ato-ili-krymu

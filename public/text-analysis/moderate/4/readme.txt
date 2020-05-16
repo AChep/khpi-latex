@@ -1,0 +1,1 @@
+https://www.rmj.ru/articles/kardiologiya/Pochemu_atorvastatin_imeet_preimuschestva__v_ogranichitelynyh_spiskah/

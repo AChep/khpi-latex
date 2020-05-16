@@ -1,0 +1,46 @@
+\documentclass[aspectratio=169]{beamer}
+\input{../../commons}
+
+\usepackage{wrapfig} 
+
+\graphicspath{{figures/}}
+\addbibresource{bibliography.bib}
+\definecolor{secondary}{gray}{0.75}
+\usetheme[faculty=fi]{fibeamer}
+
+\input{constants}
+
+% Disable default theme's logo
+\makeatletter
+\renewcommand{\fibeamer@includeLogo}[1][]{}
+\makeatother
+
+% Information 
+\subtitle{\textcolor{secondary}{\textit{\small Виконав: ст. групи КН-34г}} \\ Чепурний А. С. \\[1ex] \textcolor{secondary}{\textit{\small Керівник дипломної роботи: професор, доктор технічних наук}} \\ Годлевський М. Д.}
+\author{}
+\date{Харків 2017}
+
+\begin{document}
+    \frame{\titlepage}
+
+    \begin{frame}{Зміст}
+        \tableofcontents
+    \end{frame}
+
+    \section{Глосарій проекту}
+    \begin{frame}
+        \frametitle{Глосарій проекту}
+        {\footnotesize
+        \begin{enumerate}
+            \item \textbf{Експедитор} --- це сторона, що здійснює отримання вантажів, їх супровід при перевезенні, видачу та оформлення товаророзпорядчих документів\footnote[frame]{\cite{Kusluy2010}}.
+        \end{enumerate}
+        }
+    \end{frame}
+
+    \section{Список джерел інформації}
+    \begin{frame}
+        \frametitle{Список джерел інформації}
+        \input{../../bib}
+    \end{frame}
+
+\end{document}

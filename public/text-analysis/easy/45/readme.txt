@@ -1,0 +1,1 @@
+https://moz.gov.ua/article/health/diagnozu-vegeto-sudinna-distonija-ne-isnue

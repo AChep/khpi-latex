@@ -1,0 +1,75 @@
+.body {
+    padding-top: 40px;
+    padding-bottom: 40px;
+}
+
+.hehe {
+    display: flex;
+}
+
+.hehe>*:first-child {
+    width: 200%;
+}
+
+.hehe>*:last-child {
+    width: 50%;
+}
+
+.hehe>*:last-child>* {
+    margin-left: 4em;
+    padding: 1em;
+    color: #000;
+    background-color: #A2BCE0;
+    border-radius: 0.5em;
+}
+
+.slider {
+    position: absolute;
+    width: 960px;
+    height: 5px;
+    overflow-x: hidden;
+}
+
+.line {
+    position: absolute;
+    opacity: 0.4;
+    background: #4a8df8;
+    width: 150%;
+    height: 5px;
+}
+
+.subline {
+    position: absolute;
+    background: #4a8df8;
+    height: 5px;
+}
+
+.inc {
+    animation: increase 2s infinite;
+}
+
+.dec {
+    animation: decrease 2s 0.5s infinite;
+}
+
+@keyframes increase {
+    from {
+        left: -5%;
+        width: 5%;
+    }
+    to {
+        left: 130%;
+        width: 100%;
+    }
+}
+
+@keyframes decrease {
+    from {
+        left: -80%;
+        width: 80%;
+    }
+    to {
+        left: 110%;
+        width: 10%;
+    }
+}

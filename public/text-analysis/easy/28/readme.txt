@@ -1,0 +1,1 @@
+http://progresslab.com.ua/52-yak-pratsyuvati-iz-zaperechennyami-patsientiv-shchodo-priznachen-likariv.html

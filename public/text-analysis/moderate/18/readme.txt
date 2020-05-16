@@ -1,0 +1,1 @@
+https://compendium.com.ua/uk/clinical-guidelines-uk/cardiology-uk/section-6-uk/glava-6-kontrol-bezpeki-sertsevo-sudinnih-likarskih-zasobiv-pri-yih-zastosuvanni/

@@ -1,0 +1,123 @@
+\input{../../../preamble}
+\input{../../../commons}
+\input{../../../commons_python}
+
+\usepackage{tabularx}
+\usepackage{multicol}
+
+\newcommand{\labnumber}{1} % first lab
+\input{../preamble}
+\input{../constants}
+
+\graphicspath{{figures/}}
+
+\begin{document}
+\Ukrainian
+
+\input{../../../title}
+\addtocounter{page}{1}
+
+\section{ЭЛЕМЕНТЫ КЛАСТЕРА HADOOP}
+\subsection*{Цель}
+Исследование кластера Hadoop.
+\subsection*{Задачи}
+\begin{itemize}
+    \item выявить преимущества и недостатки Hadoop;
+    \item проанализировать структуру и основные этапы внедрения Hadoop;
+    \item исследовать основные возможности Hadoop.
+\end{itemize}
+
+\subsection{Преимущества и недостатки Hadoop}
+Преимущества Hadoop:
+\begin{enumerate}
+    \item Разнообразные источники данных.
+    \item Эффективное хранение данных.
+    \item Высокая производительность.
+    \item Высокая отказоустойчивость.
+    \item Низкий сетевой трафик.
+    \item Открытый исходный код.
+    \item Масштабируемость.
+    \item Легкость использования.
+    \item Совместимость.
+    \item Поддержка множества языков программирования.
+\end{enumerate}
+
+Недостатки Hadoop:
+\begin{enumerate}
+    \item Размер блока в файловой системе не может быть меньше 128 мегабайт.
+    \item Невозможность произведения вычислений в памяти.
+    \item Невозможность работы в интерактивном режиме обработки данных.
+    \item Сложность защиты данных.
+\end{enumerate}
+
+\subsection{Компоненты экосистемы Hadoop}
+Компоненты экосистемы Hadoop представлены на рисунке~\ref{fig:hadoop_ecosystem}.
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.6\textwidth]{hadoop_ecosystem}
+    \caption{Компоненты Hadoop}
+    \label{fig:hadoop_ecosystem}
+\end{figure}
+
+\begin{itemize}
+    \item Hadoop MapReduce -- вычислительная модель и фреймворк для распределенной обработки большого количества данных.
+
+          \begin{tabularx}{450pt}{X|X}
+              \textbf{Преимущества}     & \textbf{Недостатки} \\
+              \hline
+              \begin{itemize}[noitemsep,nolistsep,leftmargin=0pt,labelindent=0pt]
+                  \item поддержка библиотек разработанных для JVM;
+                  \item платформонезависимость.
+              \end{itemize} &
+              \begin{itemize}[noitemsep,nolistsep,leftmargin=0pt,labelindent=0pt]
+                  \item неприменимо для интерактивного анализа.
+              \end{itemize}
+          \end{tabularx}\\
+    \item HDFS (Hadoop Distributed File System) -- файловая система.
+
+          \begin{tabularx}{450pt}{X|X}
+              \textbf{Преимущества}     & \textbf{Недостатки} \\
+              \hline
+              \begin{itemize}[noitemsep,nolistsep,leftmargin=0pt,labelindent=0pt]
+                  \item высокая пропускная способность;
+                  \item отказоустойчивость.
+              \end{itemize} &
+              \begin{itemize}[noitemsep,nolistsep,leftmargin=0pt,labelindent=0pt]
+                  \item операция слияния данных с множества баз данных медленная и тяжело реализуемая.
+              \end{itemize}
+          \end{tabularx}\\
+    \item YARN -- автоматический планировщик ресурсов кластера.
+    \item HBase -- это распределенная, колоночно-ориентированная, мультиверсионная база типа <<ключ-значение>>.
+    \item Zookeeper -- сервис, который предназначен для некой координации взаимодействия процессов в распределенных системах, в распределенных приложениях.
+    \item Ambari -- сервис, нацеленный на упрощение работы с Hadoop при помощи разработанного программного обеспечения для управления и контроля кластеров.
+    \item Flume -- инструмент, позволяющий управлять потоками данных и, в конечном счете, передавать их на некоторый <<пункт назначения>>.
+    \item Sqoop -- инструмент, предназначенный для передачи данных между Hadoop и реляционными базами данных или мэйнфреймами.
+    \item Hive -- система управления базами данных на основе платформы Hadoop.
+    \item Mahout -- библиотека для машинного обучения.
+    \item R connectors -- позволяет писать mapreduce на R.
+\end{itemize}
+
+\subsection{Этапы внедрения Hadoop}
+Перед интеграцией Hadoop необходимо выполнить следующие этапы:
+\begin{enumerate}
+    \item Хранение данных: архивация, хранение информации в файлах, масштабируемость, репликация, обработка отказов;
+    \item Чтение данных: разархивация, распараллеливание, SQL доступ;
+    \item Сбор данных.
+    \item Подготовка данных: построение ROLAP/MOLAP моделей, ETL.
+\end{enumerate}
+
+\subsection{Применение Hadoop}
+Hadoop следует применять для решение таких проблем:
+\begin{enumerate}
+    \item Обработка большого количества данных (ТБ или выше).
+    \item Надежное хранение разнообразных данных.
+    \item Параллельная обработка данных.
+\end{enumerate}
+
+\subsection*{Выводы}
+В процессе выполнения лабораторной работы было выявлены преимущества и недостатки Hadoop, определены типы проблем решаемых с помощью Hadoop, описаны главные компоненты системы.
+
+Hadoop следует использовать для параллельной обработки большого количества данных.
+
+\end{document}

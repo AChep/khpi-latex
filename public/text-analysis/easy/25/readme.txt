@@ -1,0 +1,1 @@
+https://life.pravda.com.ua/health/2018/11/26/234327/

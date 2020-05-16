@@ -1,0 +1,1 @@
+http://mtd.dec.gov.ua/images/dodatki/2016_564_PSSZ/2016_564_AKN_PSSZ.pdf

@@ -1,0 +1,1 @@
+https://amosovinstitute.org.ua/2016/11/13/ishemichna-hvoroba-sertsya/

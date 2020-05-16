@@ -1,0 +1,1 @@
+https://www.pharmencyclopedia.com.ua/article/2953/gipertonichna-xvoroba

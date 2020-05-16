@@ -7,16 +7,34 @@
 
 \usepackage{lastpage}
 \usepackage{calc}
+\usepackage{pdfpages}
+\usepackage{totcount}
 \usepackage{soul}
 \usepackage{pbox}
 \usepackage{ulem}
 \usepackage{titling}
 \usepackage{framed}
-\usepackage{tabu}
 \usepackage{appendix}
 \usepackage{packages/tikz-uml}
 \usepackage[nomain,acronym,toc,nogroupskip,sort=def,xindy={glsnumbers=false}]{glossaries}
 \usepackage[figure,table]{totalcount}
+
+% \makeatletter
+% \def\tabu@verticalmeasure{\everypar{}%
+% \unless\ifnum\currentgrouptype=14 \let\tabu@currentgrouptype\currentgrouptype\fi
+%     \ifnum \tabu@currentgrouptype>12         % 14=semi-simple, 15=math shift group
+%         \setbox\tabu@box =\hbox\bgroup
+%             \let\tabu@verticalspacing \tabu@verticalsp@lcr
+%             \d@llarbegin                % after \hbox ...
+%     \else
+%         \edef\tabu@temp{\ifnum\tabu@currentgrouptype=5\vtop
+%                         \else\ifnum\tabu@currentgrouptype=12\vcenter
+%                         \else\vbox\fi\fi}%
+%         \setbox\tabu@box \hbox\bgroup$\tabu@temp \bgroup
+%             \let\tabu@verticalspacing \tabu@verticalsp@pmb
+%     \fi
+% }
+% \makeatother
 
 \makeglossaries
 \newglossarystyle{mylist}{%  
@@ -45,12 +63,79 @@
  
 \lstset{language=Kotlin}
 \graphicspath{{figures/}}
+
+\setlength{\abovedisplayskip}{20pt}
+\setlength{\belowdisplayskip}{20pt}
+
 \addbibresource{bibliography.bib}
+
+\colorlet{punct}{red!60!black}
+\definecolor{delim}{RGB}{20,105,176}
+\colorlet{numb}{magenta!60!black}
+
+\lstdefinelanguage{json}{
+    basicstyle=\normalfont\ttfamily,
+    numbers=left,
+    numberstyle=\scriptsize,
+    stepnumber=1,
+    numbersep=8pt,
+    showstringspaces=false,
+    breaklines=true,
+    literate=
+     *{0}{{{\color{numb}0}}}{1}
+      {1}{{{\color{numb}1}}}{1}
+      {2}{{{\color{numb}2}}}{1}
+      {3}{{{\color{numb}3}}}{1}
+      {4}{{{\color{numb}4}}}{1}
+      {5}{{{\color{numb}5}}}{1}
+      {6}{{{\color{numb}6}}}{1}
+      {7}{{{\color{numb}7}}}{1}
+      {8}{{{\color{numb}8}}}{1}
+      {9}{{{\color{numb}9}}}{1}
+      {:}{{{\color{punct}{:}}}}{1}
+      {,}{{{\color{punct}{,}}}}{1}
+      {\{}{{{\color{delim}{\{}}}}{1}
+      {\}}{{{\color{delim}{\}}}}}{1}
+      {[}{{{\color{delim}{[}}}}{1}
+      {]}{{{\color{delim}{]}}}}{1},
+}
+
+
+\setcounter{secnumdepth}{4}
+\setcounter{tocdepth}{4} 
+
+\titleformat{\paragraph}[block]
+  {\bfseries}{\hspace*{1.25cm}\theparagraph \quad #1}{0cm}{}
+\titleformat{name=\paragraph,numberless}[block]
+  {\bfseries}{\hspace*{1.25cm}#1}{0cm}{}
+
+\titlespacing{\paragraph} {0cm}{0cm}{0cm}
+
+\newtotcounter{citnum} %From the package documentation
+\def\oldbibitem{} \let\oldbibitem=\bibitem
+\def\bibitem{\stepcounter{citnum}\oldbibitem}
 
 \input{glosary}
 \input{constants}
 \begin{document}
-\Ukrainian
+
+\addtocounter{page}{1}
+
+\begin{titlepage}
+\includepdf[pages=-]{title/1_ТЛ_ДР_зразок_М}
+\includepdf[pages=-]{title/2_Ведомість_документів_зразок_М}
+\includepdf[pages=-]{title/3_4_Завдання_ДР_зразок_М}
+\includepdf[pages=-]{title/5_ТЛ_ПЗ_ДР_зразок_М}
+\includepdf[pages=-]{title/6_ТЛ_ІМ_зразок_М}
+\end{titlepage}
+
+\begin{titlepage}
+\begin{center}
+	\MakeUppercase{Відгук} \\
+	на дипломну роботу \\
+	<<\thetitle>>
+\end{center}
+\end{titlepage}
 
 \begin{titlepage}
 \include{abstract_ua}
@@ -64,7 +149,6 @@
 \include{abstract_en}
 \end{titlepage}
 
-\addtocounter{page}{1}
 \input{../../toc}
 \input{sec_abbreviations}
 \input{sec_introduction}
@@ -74,19 +158,24 @@
 \input{sec_4}
 \input{sec_5}
 \input{sec_6}
+\input{sec_7}
 \input{sec_conclusion}
 \input{../../bib}
 
-\begin{appendices}
-	% custom commands 
-	\newcommand\appendixsection[1]{
-		\addtocounter{section}{1}
-		\clearpage
-		\section*{Додаток \thesection. #1}
-		\addcontentsline{toc}{section}{Додаток \thesection. #1}
-	}
+% \begin{appendices}
+% 	% custom commands 
+% 	\newcommand\appendixsection[1]{
+% 		\addtocounter{section}{1}
+% 		\clearpage
+% 		\begin{center}
+% 		  \bfseries\centering
+% 		  \MakeUppercase{Додаток \thesection}\\#1
+% 		  \vspace*{0.1cm}
+% 		\end{center}
+% 		\addcontentsline{toc}{section}{Додаток \thesection. #1}
+% 	}
 
-	\input{sec_appendix_a}
-\end{appendices}
+% 	\input{sec_appendix_a}
+% \end{appendices}
 
 \end{document}

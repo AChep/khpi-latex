@@ -1,0 +1,1 @@
+https://compendium.com.ua/uk/clinical-guidelines-uk/cardiology-uk/section-12-uk/glava-6-miokardit-2/

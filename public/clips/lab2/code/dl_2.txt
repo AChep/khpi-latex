@@ -1,0 +1,1 @@
+Program and baseFor some (Contract and covers some (Case and timestamp some xsd:dateTime[>=2018-01-01T00:00:00]))

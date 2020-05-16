@@ -1,0 +1,1 @@
+https://angiology.com.ua/ua-issue-article-374
